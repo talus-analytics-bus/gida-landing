@@ -1,0 +1,134 @@
+/* unstyling */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* vars */
+$dark-blue: #213660;
+$light-blue: #0096c3;
+$dark-grey: grey;
+$light-grey: #f2f2f2;
+
+$small-font: 12px;
+$med-font: 18px;
+$big-font: 25px;
+
+$page-padding: 30px;
+$card-padding: 20px;
+
+/* style */
+.container {
+  display: grid;
+  grid-template-rows: min-content min-content min-content min-content min-content min-content;
+  grid-row-gap: $page-padding;
+  padding: $page-padding 20% $page-padding 20%;
+
+  & > * {
+    /* images */
+    &:first-child {
+      justify-self: center;
+    }
+
+    /* opening paragraph */
+    &:nth-child(2) {
+      justify-self: center;
+    }
+
+    /* divider */
+    &:nth-child(3) {
+      background-color: $light-blue;
+      width: 100%;
+      height: 10px;
+    }
+
+    &:nth-child(4) {
+      color: $light-blue;
+      font-size: $big-font;
+      font-weight: bold;
+    }
+
+    &.card {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      border: 2px solid $dark-grey;
+      box-shadow: 5px 5px 6px #ccc;
+
+      & > * {
+        padding: $card-padding;
+
+        &:first-child {
+          display: grid;
+          grid-template-rows: min-content min-content auto;
+          grid-row-gap: $card-padding;
+          background-color: $light-grey;
+
+          & > * {
+            /* card title */
+            &:first-child {
+              color: $dark-blue;
+              font-size: $big-font;
+              font-weight: bold;
+            }
+
+            /* card link */
+            &:nth-child(2) {
+              color: $dark-blue;
+            }
+
+            /* card img */
+            &:last-child {
+              background-color: green;
+            }
+          }
+        }
+        &:last-child {
+          display: grid;
+          grid-template-rows: min-content min-content min-content auto min-content;
+          grid-row-gap: $card-padding;
+
+          & > * {
+            /* card paragraph */
+            &:first-child {
+            }
+
+            /* card citation */
+            &:nth-child(2) {
+              color: $dark-grey;
+              font-style: italic;
+            }
+
+            /* card download */
+            &:last-child {
+              display: grid;
+              grid-template-columns: min-content auto;
+              grid-template-rows: min-content min-content;
+              grid-gap: $card-padding;
+
+              & > * {
+                /* card-footer icon */
+                &:first-child {
+                  grid-row-end: span 2;
+                  height: 100%;
+                }
+                /* card-footer top text */
+                &:nth-child(2) {
+                  font-size: $med-font;
+                }
+                /* card-footer bottom text */
+                &:last-child {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

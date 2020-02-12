@@ -4,8 +4,11 @@
   "description": "static gida landing page",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "cp -r src/assets build; cp src/index.html build/index.html; sass src/styles/index.scss build/styles/index.css"
   },
   "author": "Talus Analytics, LLC",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.25.0"
+  }
 }
