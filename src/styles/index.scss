@@ -145,45 +145,48 @@ div {
 
             /* card download */
             &:last-child {
-              /* button */
-              background-color: none;
-              border: none;
               width: min-content;
 
               & > :first-child {
-                display: grid;
-                grid-template-columns: auto auto;
-                grid-template-rows: min-content min-content;
-                grid-column-gap: $small-padding;
-                grid-row-gap: 5px;
-                justify-items: start;
+                /* button */
+                background-color: none;
+                border: none;
 
-                & > * {
-                  /* card-footer icon */
-                  &:first-child {
-                    grid-row-end: span 2;
-                    height: 100%;
-                    width: auto;
-                  }
-                  /* card-footer top text */
-                  &:nth-child(2) {
-                    font-size: $med-font;
-                    white-space: nowrap;
-                    font-family: "Raleway", sans-serif;
-                    margin-top: 10px;
+                & > :first-child {
+                  display: grid;
+                  grid-template-columns: auto auto;
+                  grid-template-rows: min-content min-content;
+                  grid-column-gap: $small-padding;
+                  grid-row-gap: 5px;
+                  justify-items: start;
 
-                    img {
-                      margin-left: 5px;
-                      height: 18px;
+                  & > * {
+                    /* card-footer icon */
+                    &:first-child {
+                      grid-row-end: span 2;
+                      height: 100%;
+                      width: auto;
                     }
-                  }
-                  /* card-footer bottom text */
-                  &:last-child {
-                    white-space: nowrap;
-                    color: grey;
-                    font-family: "Raleway", sans-serif;
-                    font-style: italic;
-                    margin-bottom: 10px;
+                    /* card-footer top text */
+                    &:nth-child(2) {
+                      font-size: $med-font;
+                      white-space: nowrap;
+                      font-family: "Raleway", sans-serif;
+                      margin-top: 10px;
+
+                      img {
+                        margin-left: 5px;
+                        height: 18px;
+                      }
+                    }
+                    /* card-footer bottom text */
+                    &:last-child {
+                      white-space: nowrap;
+                      color: grey;
+                      font-family: "Raleway", sans-serif;
+                      font-style: italic;
+                      margin-bottom: 10px;
+                    }
                   }
                 }
               }
@@ -248,7 +251,7 @@ div {
                 font-size: $med-font;
                 margin-bottom: 10px;
                 font-family: "Raleway", sans-serif;
-                font-weight: 700;
+                font-weight: 800;
               }
 
               /* card paragraph */
@@ -258,45 +261,48 @@ div {
 
               /* card download */
               &:last-child {
-                /* button */
-                background-color: $light-grey;
-                border: none;
                 width: min-content;
 
                 & > :first-child {
-                  display: grid;
-                  grid-template-columns: auto auto;
-                  grid-template-rows: min-content min-content;
-                  grid-column-gap: $small-padding;
-                  grid-row-gap: 5px;
-                  justify-items: start;
+                  /* button */
+                  background-color: $light-grey;
+                  border: none;
 
-                  & > * {
-                    /* card-footer icon */
-                    &:first-child {
-                      grid-row-end: span 2;
-                      height: 100%;
-                      width: auto;
-                    }
-                    /* card-footer top text */
-                    &:nth-child(2) {
-                      font-size: $med-font;
-                      white-space: nowrap;
-                      font-family: "Raleway", sans-serif;
-                      margin-top: 10px;
+                  & > :first-child {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-template-rows: min-content min-content;
+                    grid-column-gap: $small-padding;
+                    grid-row-gap: 5px;
+                    justify-items: start;
 
-                      img {
-                        margin-left: 5px;
-                        height: 18px;
+                    & > * {
+                      /* card-footer icon */
+                      &:first-child {
+                        grid-row-end: span 2;
+                        height: 100%;
+                        width: auto;
                       }
-                    }
-                    /* card-footer bottom text */
-                    &:last-child {
-                      white-space: nowrap;
-                      color: grey;
-                      font-family: "Raleway", sans-serif;
-                      font-style: italic;
-                      margin-bottom: 10px;
+                      /* card-footer top text */
+                      &:nth-child(2) {
+                        font-size: $med-font;
+                        white-space: nowrap;
+                        font-family: "Raleway", sans-serif;
+                        margin-top: 10px;
+
+                        img {
+                          margin-left: 5px;
+                          height: 18px;
+                        }
+                      }
+                      /* card-footer bottom text */
+                      &:last-child {
+                        white-space: nowrap;
+                        color: grey;
+                        font-family: "Raleway", sans-serif;
+                        font-style: italic;
+                        margin-bottom: 10px;
+                      }
                     }
                   }
                 }
