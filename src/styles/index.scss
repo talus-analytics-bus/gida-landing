@@ -78,7 +78,7 @@ $small-padding: 20px;
 
         &:first-child {
           display: grid;
-          grid-template-rows: min-content min-content auto;
+          grid-template-rows: min-content min-content min-content auto;
           // grid-row-gap: $small-padding;
           background-color: $light-grey;
 
