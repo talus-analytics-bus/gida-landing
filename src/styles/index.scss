@@ -32,7 +32,7 @@ $small-padding: 20px;
 /* style */
 .container {
   display: grid;
-  grid-template-rows: min-content min-content min-content min-content min-content min-content min-content;
+  grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content;
   grid-row-gap: $page-padding;
   padding: $page-padding 20% $page-padding 20%;
   font-family: "Open Sans", sans-serif;
@@ -297,6 +297,29 @@ $small-padding: 20px;
           }
         }
       }
+    }
+
+    &:nth-last-child(2) {
+      margin-top: 20px;
+
+      & > * {
+        margin-bottom: 15px;
+        &:first-child {
+          color: $dark-blue;
+          font-size: $med-font;
+          font-style: italic;
+        }
+        &:nth-child(3) {
+          font-style: italic;
+          margin-right: 10%;
+          margin-left: 10%;
+        }
+      }
+    }
+
+    &:last-child {
+      width: 600px;
+      justify-self: end;
     }
   }
 }
