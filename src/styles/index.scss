@@ -413,10 +413,54 @@ div {
         }
       }
     }
+  }
+}
 
-    &:last-child {
-      width: 400px;
-      justify-self: end;
+$button-width: 250px;
+$button-font-size: 16px;
+$spacing: 10px;
+
+.footer {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+
+  $item-spacing: 30px;
+  .content {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    div:first-child {
+      font-style: italic;
+      font-family: "Open Sans", sans-serif;
+      color: #999999;
+      font-size: 16px;
+    }
+
+    img {
+      height: 70px;
+      padding: 0 $item-spacing;
+    }
+
+    a:first-child:not(:last-child) img {
+      border-right: 1px solid $gray;
+    }
+    a:last-child img {
+      padding-right: 0;
+    }
+    a {
+      position: relative;
+      > div {
+        position: absolute;
+        top: -15px;
+        left: $item-spacing;
+        font-size: 0.8em;
+        pointer-events: none;
+        color: #333;
+      }
     }
   }
 }
