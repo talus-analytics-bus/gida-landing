@@ -13,7 +13,12 @@
     />
     <link rel="stylesheet" href="styles/index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>GIDA</title>
+    <title>Georgetown Infectious Disease Atlas (GIDA)</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -443,5 +448,27 @@
         </div>
       </div>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+      data-cfasync="false"
+    ></script>
+    <script>
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#f2f2f2"
+          },
+          button: {
+            background: "#213561"
+          }
+        },
+        position: "bottom-right",
+        content: {
+          message:
+            "The Georgetown Infectious Disease Atlas website uses cookies to ensure you get the best experience possible.",
+          dismiss: "OK"
+        }
+      });
+    </script>
   </body>
 </html>
