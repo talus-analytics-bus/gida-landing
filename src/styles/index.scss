@@ -10,6 +10,7 @@ $railway: "Raleway", sans-serif;
 $small-font: 16px;
 $med-font: 1.27em;
 $big-font: 1.6em;
+$extra-big-font: 1.93em;
 
 $page-padding: 40px;
 $big-padding: 30px;
@@ -46,6 +47,34 @@ div {
   padding: $page-padding 20% $page-padding 20%;
   font-family: "Open Sans", sans-serif;
 
+  /* download icon */
+  a[download] {
+    button {
+      padding: 0;
+      cursor: pointer;
+      white-space: normal;
+    }
+    &[href=""] {
+      pointer-events: none;
+      button > div > :first-of-type {
+        grid-row-end: span 2;
+        align-self: center;
+        font-style: normal !important;
+        font-size: $small-font !important;
+        font-family: "Open Sans", sans-serif !important;
+        color: $gray !important;
+      }
+    }
+  }
+
+  /* card-footer icon */
+  .download-icon {
+    grid-row-end: span 2;
+    height: 60px;
+    width: auto;
+    align-self: center;
+  }
+
   & > * {
     /* images */
     &:first-child {
@@ -73,7 +102,7 @@ div {
 
     &.header {
       color: $blue;
-      font-size: $big-font;
+      font-size: $extra-big-font;
       font-weight: 600;
       font-family: "Raleway", sans-serif;
     }
@@ -82,7 +111,7 @@ div {
       display: grid;
       grid-template-columns: 40% 60%;
       border: 1px solid $dark-gray;
-      box-shadow: 5px 5px 6px #ccc;
+      box-shadow: 5px 5px 15px 0 #b3b3b3;
 
       /* card link */
       .link {
@@ -119,13 +148,6 @@ div {
         border-radius: 5px;
         border: none;
         white-space: nowrap;
-      }
-
-      /* download icon */
-      a[download] {
-        button {
-          padding: 0;
-        }
       }
 
       & > * {
@@ -192,13 +214,6 @@ div {
                   justify-items: start;
 
                   & > * {
-                    /* card-footer icon */
-                    &.download-icon {
-                      grid-row-end: span 2;
-                      height: 60px;
-                      width: auto;
-                      align-self: center;
-                    }
                     /* card-footer top text */
                     &:nth-child(2) {
                       font-size: $med-font;
@@ -214,11 +229,11 @@ div {
                     }
                     /* card-footer bottom text */
                     &:last-child {
-                      white-space: nowrap;
                       color: gray;
                       font-family: "Raleway", sans-serif;
                       font-size: 0.9em;
                       align-self: flex-start;
+                      text-align: left;
                       // font-style: italic;
                       // margin-bottom: 10px;
                     }
@@ -235,10 +250,10 @@ div {
       display: grid;
       grid-template-columns: 40% 60%;
       border: 1px solid $dark-gray;
-      box-shadow: 5px 5px 6px #ccc;
+      box-shadow: 5px 5px 15px 0 #b3b3b3;
 
       & > * {
-        padding: $small-padding;
+        padding: $big-padding;
         background-color: $light-gray;
 
         &:first-child {
@@ -272,6 +287,15 @@ div {
           grid-row-gap: $small-padding;
 
           & > * {
+            &:not(:first-child) {
+              padding-top: $big-padding;
+            }
+            &:not(:last-child) {
+              padding-bottom: $big-padding;
+            }
+          }
+
+          & > * {
             padding-bottom: $small-padding;
             border-bottom: 1px solid gray;
 
@@ -282,11 +306,12 @@ div {
             & > * {
               /* card title */
               &:first-child {
+                max-width: 500px; // hack to prevent widows; todo elegantly
                 color: $dark-blue;
                 font-size: $med-font;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
                 font-family: "Raleway", sans-serif;
-                font-weight: 600;
+                font-weight: normal;
               }
 
               /* card paragraph */
@@ -312,12 +337,12 @@ div {
                     justify-items: start;
 
                     & > * {
-                      /* card-footer icon */
-                      &:first-child {
-                        grid-row-end: span 2;
-                        height: 100%;
-                        width: auto;
-                      }
+                      // /* card-footer icon */
+                      // &:first-child {
+                      //   grid-row-end: span 2;
+                      //   height: 100%;
+                      //   width: auto;
+                      // }
                       /* card-footer top text */
                       &:nth-child(2) {
                         font-size: $med-font;
@@ -352,11 +377,13 @@ div {
       margin-top: 20px;
 
       & > * {
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         &:first-child {
           color: $dark-blue;
           font-size: $big-font;
+          font-family: "Raleway", serif;
           font-style: italic;
+          font-weight: 500;
         }
         &:nth-child(3) {
           font-style: italic;
