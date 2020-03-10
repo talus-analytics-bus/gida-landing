@@ -1,17 +1,26 @@
 /* vars */
-$dark-blue: #213660;
-$light-blue: #52a8e6;
-$dark-grey: grey;
-$light-grey: #f4f4f4;
+$dark-blue: #213561;
+$light-blue: #97cdef;
+$blue: #52a8e6;
+$gray: #999;
+$dark-gray: #d6d6d6;
+$light-gray: #f4f4f4;
 
 $railway: "Raleway", sans-serif;
-$small-font: 12px;
-$med-font: 16px;
-$big-font: 20px;
+$small-font: 16px;
+$med-font: 1.27em;
+$big-font: 1.6em;
 
 $page-padding: 40px;
 $big-padding: 30px;
 $small-padding: 15px;
+
+/* mixins */
+@mixin space_items_vert($size) {
+  > :not(:last-child) {
+    margin-bottom: $size;
+  }
+}
 
 /* unstyling */
 html,
@@ -62,18 +71,62 @@ div {
       height: 10px;
     }
 
-    &:nth-child(4) {
-      color: $light-blue;
+    &.header {
+      color: $blue;
       font-size: $big-font;
-      font-weight: 800;
+      font-weight: 600;
       font-family: "Raleway", sans-serif;
     }
 
     &.card {
       display: grid;
       grid-template-columns: 40% 60%;
-      border: 1px solid $dark-grey;
+      border: 1px solid $dark-gray;
       box-shadow: 5px 5px 6px #ccc;
+
+      /* card link */
+      .link {
+        color: $blue;
+        font-size: $small-font;
+        margin-bottom: $big-padding;
+      }
+
+      /* dev styles */
+      .dev {
+        color: $gray;
+        > div:first-child {
+          margin-bottom: 2px;
+        }
+        button.main {
+          background-image: none;
+          background-color: $gray;
+          pointer-events: none;
+        }
+      }
+
+      // float down
+      .bottom {
+        margin-top: auto;
+      }
+
+      /* go to site button */
+      button.main {
+        font-size: $med-font;
+        font-family: "Open Sans", sans-serif;
+        color: white;
+        background-image: linear-gradient(#365194, #253b6c);
+        padding: 10px 40px;
+        border-radius: 5px;
+        border: none;
+        white-space: nowrap;
+      }
+
+      /* download icon */
+      a[download] {
+        button {
+          padding: 0;
+        }
+      }
 
       & > * {
         padding: $big-padding;
@@ -82,29 +135,22 @@ div {
           display: grid;
           grid-template-rows: min-content min-content min-content auto;
           // grid-row-gap: $small-padding;
-          background-color: $light-grey;
+          background-color: $light-gray;
 
           & > * {
             /* card title */
             &:first-child {
               color: $dark-blue;
               font-size: $big-font;
-              font-weight: 800;
+              font-weight: 600;
               margin-bottom: 5px;
               font-family: "Raleway", sans-serif;
-            }
-
-            /* card link */
-            &:nth-child(2) {
-              color: $light-blue;
-              font-size: $small-font;
-              margin-bottom: $small-padding;
             }
 
             /* card img */
             &:last-child {
               padding: 10px;
-              border: 1px solid lightgrey;
+              border: 1px solid lightgray;
               background-color: white;
               & > :first-child {
                 width: 100%;
@@ -113,9 +159,9 @@ div {
           }
         }
         &:last-child {
-          display: grid;
-          grid-template-rows: min-content min-content min-content auto min-content;
-          grid-row-gap: $small-padding;
+          display: flex;
+          flex-flow: column;
+          @include space_items_vert($small-padding);
 
           & > * {
             /* card paragraph */
@@ -124,28 +170,13 @@ div {
 
             /* card citation */
             &:nth-child(2) {
-              color: $dark-grey;
+              color: gray;
               font-style: italic;
-            }
-
-            /* card "go to site" button */
-            &:nth-child(3) {
-              width: min-content;
-
-              & > :first-child {
-                font-size: $med-font;
-                color: white;
-                background-image: linear-gradient(#365194, #253b6c);
-                padding: 10px 20px 10px 20px;
-                border-radius: 3px;
-                border: none;
-                white-space: nowrap;
-              }
             }
 
             /* card download */
             &:last-child {
-              width: min-content;
+              // width: min-content;
 
               & > :first-child {
                 /* button */
@@ -162,17 +193,19 @@ div {
 
                   & > * {
                     /* card-footer icon */
-                    &:first-child {
+                    &.download-icon {
                       grid-row-end: span 2;
-                      height: 100%;
+                      height: 60px;
                       width: auto;
+                      align-self: center;
                     }
                     /* card-footer top text */
                     &:nth-child(2) {
                       font-size: $med-font;
                       white-space: nowrap;
                       font-family: "Raleway", sans-serif;
-                      margin-top: 10px;
+                      align-self: flex-end;
+                      // margin-top: 10px;
 
                       img {
                         margin-left: 5px;
@@ -182,10 +215,12 @@ div {
                     /* card-footer bottom text */
                     &:last-child {
                       white-space: nowrap;
-                      color: grey;
+                      color: gray;
                       font-family: "Raleway", sans-serif;
-                      font-style: italic;
-                      margin-bottom: 10px;
+                      font-size: 0.9em;
+                      align-self: flex-start;
+                      // font-style: italic;
+                      // margin-bottom: 10px;
                     }
                   }
                 }
@@ -199,12 +234,12 @@ div {
     &.card-final {
       display: grid;
       grid-template-columns: 40% 60%;
-      border: 1px solid $dark-grey;
+      border: 1px solid $dark-gray;
       box-shadow: 5px 5px 6px #ccc;
 
       & > * {
         padding: $small-padding;
-        background-color: $light-grey;
+        background-color: $light-gray;
 
         &:first-child {
           display: grid;
@@ -217,13 +252,13 @@ div {
               font-family: "Raleway", sans-serif;
               color: $dark-blue;
               font-size: $big-font;
-              font-weight: 800;
+              font-weight: 600;
             }
 
             /* card img */
             &:nth-child(2) {
               background-color: white;
-              border: 1px solid lightgrey;
+              border: 1px solid lightgray;
               padding: 5px;
               & > :first-child {
                 width: 100%;
@@ -238,7 +273,7 @@ div {
 
           & > * {
             padding-bottom: $small-padding;
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid gray;
 
             &:last-child {
               border: none;
@@ -251,7 +286,7 @@ div {
                 font-size: $med-font;
                 margin-bottom: 10px;
                 font-family: "Raleway", sans-serif;
-                font-weight: 800;
+                font-weight: 600;
               }
 
               /* card paragraph */
@@ -265,7 +300,7 @@ div {
 
                 & > :first-child {
                   /* button */
-                  background-color: $light-grey;
+                  background-color: $light-gray;
                   border: none;
 
                   & > :first-child {
@@ -298,7 +333,7 @@ div {
                       /* card-footer bottom text */
                       &:last-child {
                         white-space: nowrap;
-                        color: grey;
+                        color: gray;
                         font-family: "Raleway", sans-serif;
                         font-style: italic;
                         margin-bottom: 10px;
