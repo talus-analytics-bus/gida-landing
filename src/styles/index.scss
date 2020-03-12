@@ -77,6 +77,13 @@ button.main,
   padding: $page-padding 20% $page-padding 20%;
   font-family: "Open Sans", sans-serif;
 
+  /* citation at end of doc */
+  .textblock {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+
   /* download icon */
   a[download] {
     button {
@@ -89,7 +96,7 @@ button.main,
       button > div > :first-of-type {
         grid-row-end: span 2;
         align-self: center;
-        font-style: normal !important;
+        font-style: italic !important;
         font-size: $small-font !important;
         font-family: "Open Sans", sans-serif !important;
         color: $gray !important;
