@@ -42,7 +42,7 @@ div {
 
 /* go to site button */
 button.main,
-.cc-compliance a {
+.cc-compliance a:not(:first-child) {
   font-size: $med-font;
   font-family: "Open Sans", sans-serif;
   font-weight: normal;

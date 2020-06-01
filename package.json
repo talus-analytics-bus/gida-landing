@@ -4,7 +4,7 @@
   "description": "static gida landing page",
   "main": "index.html",
   "scripts": {
-    "build": "cp src/index.html build/index.html; cp -r src/assets build; cp -r src/downloads build; node_modules/.bin/sass src/styles/index.scss build/styles/index.css"
+    "build": "cp src/index.html build/index.html; cp -r src/assets build; cp -r src/js build; cp -r src/downloads build; node_modules/.bin/sass src/styles/index.scss build/styles/index.css"
   },
   "author": "Talus Analytics, LLC",
   "license": "ISC",
