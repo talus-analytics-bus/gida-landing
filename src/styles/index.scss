@@ -77,6 +77,13 @@ button.main,
   padding: $page-padding 20% $page-padding 20%;
   font-family: "Open Sans", sans-serif;
 
+  /* Key citations */
+  .citation {
+    color: gray;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
   /* citation at end of doc */
   .textblock {
     p {
