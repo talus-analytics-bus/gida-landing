@@ -74,7 +74,7 @@ button.main,
   display: grid;
   grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content;
   grid-row-gap: $page-padding;
-  padding: $page-padding 20% $page-padding 20%;
+  padding: $page-padding 20%;
   font-family: "Open Sans", sans-serif;
 
   /* Key citations */
@@ -383,7 +383,7 @@ button.main,
                       /* card-footer top text */
                       &:nth-child(2) {
                         font-size: $med-font;
-                        white-space: nowrap;
+                        // white-space: nowrap;
                         font-family: "Raleway", sans-serif;
                         margin-top: 10px;
 
@@ -394,7 +394,8 @@ button.main,
                       }
                       /* card-footer bottom text */
                       &:last-child {
-                        white-space: nowrap;
+                        // white-space: nowrap;
+                        text-align: left;
                         color: gray;
                         font-family: "Raleway", sans-serif;
                         font-style: italic;
