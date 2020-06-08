@@ -19,6 +19,14 @@ $small-padding: 15px;
 // responsiveness
 $phone: "screen and (max-width : 812px)";
 $phone-narrow: "screen and (max-width : 500px)";
+@media #{$phone} {
+  .container .card-final {
+    grid-template-columns: unset !important;
+  }
+  .container .card-final div:nth-child(2) {
+    padding-top: 0;
+  }
+}
 @media #{$phone-narrow} {
   .container > *.card {
     grid-template-columns: unset !important;
