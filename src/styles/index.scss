@@ -16,6 +16,40 @@ $page-padding: 40px;
 $big-padding: 30px;
 $small-padding: 15px;
 
+// responsiveness
+$phone: "screen and (max-width : 812px)";
+$phone-narrow: "screen and (max-width : 500px)";
+@media #{$phone-narrow} {
+  .container > *.card {
+    grid-template-columns: unset !important;
+  }
+  a.link + div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .container {
+    padding: $page-padding 5px !important;
+  }
+  .cc-window.cc-floating {
+    max-width: unset !important;
+  }
+  .cc-bottom {
+    bottom: 0 !important;
+  }
+  .cc-right {
+    right: unset !important;
+  }
+  .footer {
+    .content {
+      a:first-child {
+        img {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
 /* mixins */
 @mixin space_items_vert($size) {
   > :not(:last-child) {
@@ -38,6 +72,10 @@ p {
 /* style */
 div {
   font-size: $small-font;
+}
+
+.cc-revoke {
+  display: none !important;
 }
 
 /* go to site button */
@@ -386,6 +424,7 @@ button.main,
                       &:nth-child(2) {
                         font-size: $med-font;
                         // white-space: nowrap;
+                        text-align: left;
                         font-family: "Raleway", sans-serif;
                         margin-top: 10px;
 
@@ -443,7 +482,7 @@ $spacing: 10px;
   width: 100%;
   background-color: white;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 
   $item-spacing: 30px;
   .content {
