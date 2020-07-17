@@ -1,3 +1,7 @@
+# Shell scripts
+/sh
+
+# Other
 node_modules
 build
 .DS_Store
