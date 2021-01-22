@@ -124,7 +124,7 @@ button {
   max-width: 1120px;
   align-items: center;
   margin: 0 auto;
-  padding: $page-padding 10px;
+  padding: $page-padding 10px 0px 10px;
   font-family: "Open Sans", sans-serif;
 
   /* Key citations */
@@ -135,7 +135,7 @@ button {
 
   /* citation at end of doc */
   .textblock {
-    p {
+    p:not(:last-child) {
       margin-bottom: 20px;
     }
   }
@@ -304,47 +304,29 @@ $button-font-size: 16px;
 $spacing: 10px;
 
 .footer {
-  margin-top: 100px;
+  margin-top: 80px;
+  height: 90px;
   width: 100%;
   background-color: white;
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-top: 1px solid $black;
 
-  $item-spacing: 30px;
+  $item-spacing: 40px;
   .content {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: flex-end;
-
-    div:first-child {
-      font-style: italic;
-      font-family: "Open Sans", sans-serif;
-      color: #999999;
-      font-size: 16px;
-    }
-
-    img {
-      height: 70px;
-      padding: 0 $item-spacing;
-    }
-
-    a:first-child:not(:last-child) img {
-      border-right: 1px solid $black;
-    }
-    a:last-child img {
-      padding-right: 0;
-    }
     a {
-      position: relative;
-      > div {
-        position: absolute;
-        top: -15px;
-        left: $item-spacing;
-        font-size: 0.8em;
-        pointer-events: none;
-        color: #333;
+      padding: 0 $item-spacing;
+      &:not(:last-child) {
+        border-right: 1px solid $black;
       }
+    }
+    img {
+      height: 40px;
     }
   }
 }
