@@ -4,59 +4,23 @@ $light-blue: #97cdef;
 $blue: #52a8e6;
 $gray: #999;
 $dark-gray: #d6d6d6;
-$light-gray: #f4f4f4;
+$light-gray: #f2f2f2;
+
+// IDEA re-brand vars
+$black: #303434;
+$primary-dark-blue: #023f88;
+$gray-2: #828282;
+$gray-4: #f2f2f2;
 
 $railway: "Raleway", sans-serif;
 $small-font: 16px;
-$med-font: 1.27em;
-$big-font: 1.6em;
+$med-font: 20px;
+$big-font: 28px;
 $extra-big-font: 1.93em;
 
-$page-padding: 40px;
+$page-padding: 50px;
 $big-padding: 30px;
 $small-padding: 15px;
-
-// responsiveness
-$phone: "screen and (max-width : 812px)";
-$phone-narrow: "screen and (max-width : 500px)";
-@media #{$phone} {
-  .container .card-final {
-    grid-template-columns: unset !important;
-  }
-  .container .card-final div:nth-child(2) {
-    padding-top: 0;
-  }
-}
-@media #{$phone-narrow} {
-  .container > *.card {
-    grid-template-columns: unset !important;
-  }
-  a.link + div {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .container {
-    padding: $page-padding 5px !important;
-  }
-  .cc-window.cc-floating {
-    max-width: unset !important;
-  }
-  .cc-bottom {
-    bottom: 0 !important;
-  }
-  .cc-right {
-    right: unset !important;
-  }
-  .footer {
-    .content {
-      a:first-child {
-        img {
-          padding-left: 0;
-        }
-      }
-    }
-  }
-}
 
 /* mixins */
 @mixin space_items_vert($size) {
@@ -65,12 +29,18 @@ $phone-narrow: "screen and (max-width : 500px)";
   }
 }
 
+@mixin btn-primary {
+  background: linear-gradient(180deg, rgba(2, 63, 136, 0.85) 0%, #023f88 100%);
+  color: white;
+}
+
 /* unstyling */
 html,
 body {
   width: 100%;
   height: 100%;
   margin: 0;
+  color: $black;
 }
 
 p {
@@ -80,6 +50,29 @@ p {
 /* style */
 div {
   font-size: $small-font;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 2px solid #023f88;
+  border-radius: 5px;
+  height: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-size: $small-font;
+  font-weight: 600;
+  color: $primary-dark-blue;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 
 .cc-revoke {
@@ -116,11 +109,19 @@ button.main,
   }
 }
 
+.line {
+  position: absolute;
+  width: 100%;
+  height: 0.5px;
+  background-color: $black;
+  top: 115px;
+}
+
 .container {
-  display: grid;
-  grid-template-rows: min-content min-content min-content min-content min-content min-content min-content min-content min-content;
-  grid-row-gap: $page-padding;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1120px;
+  align-items: center;
   margin: 0 auto;
   padding: $page-padding 10px;
   font-family: "Open Sans", sans-serif;
@@ -129,44 +130,12 @@ button.main,
   .citation {
     color: gray;
     font-style: italic;
-    margin-bottom: 20px;
   }
 
   /* citation at end of doc */
   .textblock {
     p {
       margin-bottom: 20px;
-    }
-  }
-
-  /* download icon */
-  a[download] {
-    button {
-      padding: 0;
-      cursor: pointer;
-      white-space: normal;
-    }
-    &[href=""] {
-      pointer-events: none;
-      button > div > :first-of-type {
-        grid-row-end: span 2;
-        align-self: center;
-        font-style: italic !important;
-        font-size: $small-font !important;
-        font-family: "Open Sans", sans-serif !important;
-        color: $gray !important;
-      }
-    }
-  }
-
-  .subheader {
-    font-weight: normal;
-    font-family: "Raleway", sans-serif;
-    margin-bottom: 30px;
-    color: $dark-blue;
-    + a.link {
-      margin: 0;
-      margin-bottom: 10px;
     }
   }
 
@@ -178,317 +147,140 @@ button.main,
     align-self: center;
   }
 
-  & > * {
-    /* images */
-    &:first-child {
-      justify-self: center;
-      width: 300px;
-    }
+  .hero {
+    justify-self: center;
+    width: 450px;
+    background-color: white;
+    padding: 0px 45px;
+    z-index: 1;
+  }
 
-    /* opening paragraph */
-    &:nth-child(2) {
-      justify-self: center;
-      text-align: center;
-      padding: 0 15%;
-      font-family: "Raleway", sans-serif;
+  .landing-text {
+    margin: 80px 0px;
+    max-width: 700px;
+
+    .opening-para {
+      text-align: justify;
+      font-family: "Open Sans", sans-serif;
       font-size: $med-font;
-      line-height: 1.8em;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  }
+
+  .header {
+    color: $primary-dark-blue;
+    font-size: $big-font;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 30px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    .card {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    border: 1px solid $dark-gray;
+    box-shadow: 5px 5px 15px 0 #b3b3b3;
+
+    .left-block,
+    .right-block {
+      display: flex;
+      flex-direction: column;
+      padding: 30px;
     }
 
-    /* divider */
-    &:nth-child(3) {
-      background-color: $light-blue;
-      width: 100%;
-      height: 10px;
-    }
-
-    &.header {
-      color: $blue;
-      font-size: $extra-big-font;
-      font-weight: 600;
-      font-family: "Raleway", sans-serif;
-    }
-
-    &.card {
-      display: grid;
-      grid-template-columns: 40% 60%;
-      border: 1px solid $dark-gray;
-      box-shadow: 5px 5px 15px 0 #b3b3b3;
-
-      /* card link */
+    .left-block {
+      background-color: $gray-4;
+      .screencap {
+        max-width: 100%;
+      }
       .link {
-        color: $blue;
+        margin-top: 10px;
+        font-family: "Raleway", sans-serif;
         font-size: $small-font;
-        margin-bottom: $big-padding;
+        color: $primary-dark-blue;
         word-break: break-all;
       }
+    }
 
-      /* dev styles */
-      .dev {
-        color: $gray;
-        > div:first-child {
-          margin-bottom: 2px;
+    .right-block {
+      .logo-container {
+        height: 80px;
+        margin-bottom: 30px;
+        .card-logo {
+          max-height: 100%;
+          max-width: 100%;
         }
-        button.main {
-          background-image: none;
-          background-color: $gray;
+      }
+      .citation {
+        margin-top: 15px;
+        font-style: italic;
+        a {
+          color: $primary-dark-blue;
+          text-decoration: none;
+        }
+        a:visited {
+          color: $primary-dark-blue;
+        }
+      }
+      h2 {
+        font-size: $med-font;
+        font-weight: normal;
+        margin: 0px 0px 15px 0px;
+      }
+      .dataset-section {
+        &:not(:last-child) {
+          margin-bottom: 50px;
+        }
+      }
+      .buttons {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        a {
+          &:not(:last-child) {
+            margin-right: 20px;
+          }
+        }
+        .site {
+          @include btn-primary();
+          color: white;
+        }
+        img {
+          width: 12px;
+          height: 15px;
+          margin-right: 10px;
+        }
+        .disabled {
           pointer-events: none;
-        }
-      }
-
-      // float down
-      .bottom {
-        margin-top: auto;
-      }
-
-      & > * {
-        padding: $big-padding;
-
-        &:first-child {
-          display: grid;
-          grid-template-rows: min-content min-content min-content auto;
-          // grid-row-gap: $small-padding;
-          background-color: $light-gray;
-
-          & > * {
-            /* card title */
-            &:first-child {
-              color: $dark-blue;
-              font-size: $big-font;
-              font-weight: 600;
-              margin-bottom: 5px;
-              font-family: "Raleway", sans-serif;
-            }
-
-            /* card img */
-            &:last-child {
-              padding: 10px;
-              border: 1px solid lightgray;
-              background-color: white;
-              & > :first-child {
-                width: 100%;
-              }
-            }
-          }
-        }
-        &:last-child {
-          display: flex;
-          flex-flow: column;
-          @include space_items_vert($small-padding);
-
-          & > * {
-            /* card paragraph */
-            &:first-child {
-            }
-
-            /* card citation */
-            &:nth-child(2) {
-              color: gray;
-              font-style: italic;
-            }
-
-            /* card download */
-            &:last-child {
-              // width: min-content;
-
-              & > :first-child:not(.main) {
-                /* button */
-                background-color: none;
-                border: none;
-
-                & > :first-child {
-                  display: grid;
-                  grid-template-columns: auto auto;
-                  grid-template-rows: min-content min-content;
-                  grid-column-gap: $small-padding;
-                  grid-row-gap: 5px;
-                  justify-items: start;
-                  background-color: white;
-
-                  &:hover {
-                    color: $blue;
-                  }
-
-                  & > * {
-                    /* card-footer top text */
-                    &:nth-child(2) {
-                      font-size: $med-font;
-                      white-space: nowrap;
-                      font-family: "Raleway", sans-serif;
-                      align-self: flex-end;
-                      // margin-top: 10px;
-
-                      img {
-                        margin-left: 5px;
-                        height: 18px;
-                      }
-                    }
-                    /* card-footer bottom text */
-                    &:last-child {
-                      color: gray;
-                      font-family: "Raleway", sans-serif;
-                      font-size: 0.9em;
-                      align-self: flex-start;
-                      text-align: left;
-                      // font-style: italic;
-                      // margin-bottom: 10px;
-                    }
-                  }
-                }
-              }
-            }
+          button {
+            border-color: #c4c4c4;
+            color: #c4c4c4;
           }
         }
       }
     }
-
-    &.card-final {
-      display: grid;
-      grid-template-columns: 40% 60%;
-      border: 1px solid $dark-gray;
-      box-shadow: 5px 5px 15px 0 #b3b3b3;
-
-      & > * {
-        padding: $big-padding;
-        background-color: $light-gray;
-
-        &:first-child {
-          display: grid;
-          grid-template-rows: min-content min-content auto;
-          grid-row-gap: $small-padding;
-
-          & > * {
-            /* card title */
-            &:first-child {
-              font-family: "Raleway", sans-serif;
-              color: $dark-blue;
-              font-size: $big-font;
-              font-weight: 600;
-            }
-
-            /* card img */
-            &:nth-child(2) {
-              background-color: white;
-              border: 1px solid lightgray;
-              padding: 5px;
-              & > :first-child {
-                width: 100%;
-              }
-            }
-          }
-        }
-        &:last-child {
-          display: grid;
-          grid-template-rows: min-content min-content min-content;
-          grid-row-gap: $small-padding;
-
-          & > * {
-            &:not(:first-child) {
-              padding-top: $big-padding;
-            }
-            &:not(:last-child) {
-              padding-bottom: $big-padding;
-            }
-          }
-
-          & > * {
-            padding-bottom: $small-padding;
-            border-bottom: 1px solid gray;
-
-            &:last-child {
-              border: none;
-            }
-
-            & > * {
-              /* card title */
-              &:first-child {
-                max-width: 500px; // hack to prevent widows; todo elegantly
-                color: $dark-blue;
-                font-size: $med-font;
-                margin-bottom: 5px;
-                font-family: "Raleway", sans-serif;
-                font-weight: normal;
-              }
-
-              /* card paragraph */
-              &:nth-child(2) {
-                margin-bottom: 20px;
-              }
-
-              /* card download */
-              &:last-child {
-                width: min-content;
-
-                & > :first-child {
-                  /* button */
-                  background-color: $light-gray;
-                  border: none;
-
-                  & > :first-child {
-                    display: grid;
-                    grid-template-columns: auto auto;
-                    grid-template-rows: min-content min-content;
-                    grid-column-gap: $small-padding;
-                    grid-row-gap: 5px;
-                    justify-items: start;
-
-                    & > * {
-                      // /* card-footer icon */
-                      // &:first-child {
-                      //   grid-row-end: span 2;
-                      //   height: 100%;
-                      //   width: auto;
-                      // }
-                      /* card-footer top text */
-                      &:nth-child(2) {
-                        font-size: $med-font;
-                        // white-space: nowrap;
-                        text-align: left;
-                        font-family: "Raleway", sans-serif;
-                        margin-top: 10px;
-
-                        img {
-                          margin-left: 5px;
-                          height: 18px;
-                        }
-                      }
-                      /* card-footer bottom text */
-                      &:last-child {
-                        // white-space: nowrap;
-                        text-align: left;
-                        color: gray;
-                        font-family: "Raleway", sans-serif;
-                        font-style: italic;
-                        margin-bottom: 10px;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+  }
+  .textblock {
+    .header {
+      margin-bottom: 20px;
     }
-
-    &:nth-last-child(2) {
-      margin-top: 20px;
-
-      & > * {
-        margin-bottom: 5px;
-        &:first-child {
-          color: $dark-blue;
-          font-size: $big-font;
-          font-family: "Raleway", serif;
-          font-style: italic;
-          font-weight: 500;
-        }
-        &:nth-child(3) {
-          font-style: italic;
-          margin-right: 10%;
-          margin-left: 10%;
-        }
-      }
+    .main-citation {
+      margin-left: 10%;
+      margin-right: 10%;
+      font-style: italic;
     }
   }
 }
@@ -498,6 +290,7 @@ $button-font-size: 16px;
 $spacing: 10px;
 
 .footer {
+  margin-top: 100px;
   width: 100%;
   background-color: white;
   display: flex;
@@ -545,4 +338,46 @@ $spacing: 10px;
 .cc-message,
 .cc-message * {
   font-family: "Open Sans", sans-serif;
+}
+
+// responsiveness
+$phone: "screen and (max-width : 812px)";
+$phone-narrow: "screen and (max-width : 500px)";
+@media #{$phone} {
+  .container .card-final {
+    grid-template-columns: unset !important;
+  }
+  .container .card-final div:nth-child(2) {
+    padding-top: 0;
+  }
+}
+@media #{$phone-narrow} {
+  .container > *.card {
+    grid-template-columns: unset !important;
+  }
+  a.link + div {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .container {
+    padding: $page-padding 5px !important;
+  }
+  .cc-window.cc-floating {
+    max-width: unset !important;
+  }
+  .cc-bottom {
+    bottom: 0 !important;
+  }
+  .cc-right {
+    right: unset !important;
+  }
+  .footer {
+    .content {
+      a:first-child {
+        img {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
