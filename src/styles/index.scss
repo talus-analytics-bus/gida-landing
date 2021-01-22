@@ -3,6 +3,7 @@ $black: #303434;
 $primary-dark-blue: #023f88;
 $gray-2: #828282;
 $gray-4: #f2f2f2;
+$primary-light-blue: #009bdf;
 
 $railway: "Raleway", sans-serif;
 $small-font: 16px;
@@ -198,7 +199,6 @@ button {
     .right-block {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       padding: 30px;
     }
 
@@ -211,13 +211,13 @@ button {
         margin-top: 10px;
         font-family: "Raleway", sans-serif;
         font-size: $small-font;
-        color: $primary-dark-blue;
         word-break: break-all;
         text-decoration: underline;
       }
     }
 
     .right-block {
+      justify-content: space-between;
       .logo-container {
         height: 80px;
         margin-bottom: 30px;
@@ -235,6 +235,9 @@ button {
         }
         a:visited {
           color: $primary-dark-blue;
+        }
+        a:hover {
+          color: $primary-light-blue;
         }
       }
       h2 {
@@ -284,6 +287,15 @@ button {
       margin-right: 10%;
       font-style: italic;
     }
+  }
+}
+
+.link {
+  &:visited {
+    color: $primary-dark-blue;
+  }
+  &:hover {
+    color: $primary-light-blue;
   }
 }
 
