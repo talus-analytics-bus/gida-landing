@@ -198,6 +198,7 @@ button {
     .right-block {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       padding: 30px;
     }
 
@@ -212,6 +213,7 @@ button {
         font-size: $small-font;
         color: $primary-dark-blue;
         word-break: break-all;
+        text-decoration: underline;
       }
     }
 
