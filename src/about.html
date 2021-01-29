@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-167624435-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window["ga-disable-UA-167972896-1"] = true;
+    </script>
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — International Disease and Events Analysis (IDEA)</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    />
+  </head>
+  <body>
+    <nav>NAV BAR</nav>
+    <div>CONTENT</div>
+    <div class="footer">
+      <div class="content">
+        <a target="_blank" href="https://ghssidea.org">
+          <img
+            src="assets/logo-title.png"
+            alt="International Disease and Events Analysis"
+        /></a>
+        <a target="_blank" href="https://ghss.georgetown.edu/">
+          <img
+            src="assets/logo-georgetown.png"
+            alt="Georgetown University Center for Global Health Science and Security"
+        /></a>
+        <a target="_blank" href="http://talusanalytics.com/">
+          <img src="assets/logo-talus.png" alt="Talus Analytics, LLC"
+        /></a>
+      </div>
+    </div>
+    <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+      /**
+       * If consent is given for cookies, add gtag cookies
+       * TODO uncomment lines below that set GA cookies and replace XXX with
+       * correct tag for site after GA is set up.
+       * @method setupGA
+       * @return {[type]} [description]
+       */
+      function setupGA(allowed) {
+        if (!allowed) {
+          window["ga-disable-UA-167972896-1"] = true;
+        } else {
+          window["ga-disable-UA-167972896-1"] = false;
+          /**
+           * Helper function for defining gtag cookies
+           * @method gtag
+           * @return {[type]} [description]
+           */
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "UA-167972896-1");
+        }
+      }
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#d4d4d4",
+          },
+          button: {
+            background: "#0f234b",
+          },
+        },
+        position: "bottom-right",
+        type: "opt-in",
+        content: {
+          message:
+            "The Georgetown Infectious Disease Atlas uses cookies to ensure you get the best experience possible.",
+        },
+        // https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out
+        onInitialise: function (status) {
+          var type = this.options.type;
+          var didConsent = this.hasConsented();
+          if (type == "opt-in" && didConsent) {
+            // enable cookies
+            setupGA(true);
+          }
+          if (type == "opt-out" && !didConsent) {
+            // disable cookies
+            setupGA(false);
+          }
+        },
+        onStatusChange: function (status, chosenBefore) {
+          var type = this.options.type;
+          var didConsent = this.hasConsented();
+          if (type == "opt-in" && didConsent) {
+            // enable cookies
+            setupGA(true);
+          }
+          if (type == "opt-out" && !didConsent) {
+            // disable cookies
+            setupGA(false);
+          }
+        },
+        onRevokeChoice: function () {
+          var type = this.options.type;
+          if (type == "opt-in") {
+            // disable cookies
+            setupGA(false);
+          }
+          if (type == "opt-out") {
+            // enable cookies
+            setupGA(true);
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
