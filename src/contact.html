@@ -43,7 +43,73 @@
       </div>
     </nav>
     <div class="contact">
-      <div>CONTENT</div>
+      <div class="content">
+        <h1>Contact</h1>
+        <p>
+          Contact us at
+          <a href="mailto:outbreaks@georgetown.edu" target="_blank" class="link"
+            >outbreaks@georgetown.edu</a
+          >
+          or through the form below.
+        </p>
+        <form
+          class="main"
+          id="contact-form"
+          aria-label="Contact us"
+          method="post"
+        >
+          <div class="formRow">
+            <label class="firstName" htmlFor="First_Name">
+              First name*
+              <input type="text" id="First_Name" name="First_Name" />
+            </label>
+            <label class="lastName" htmlFor="Last_Name">
+              Last name*
+              <input type="text" id="Last_Name" name="Last_Name" />
+            </label>
+          </div>
+
+          <div class="formRow">
+            <label class="email" htmlFor="Email">
+              Email*
+              <input type="email" id="Email" name="Email" />
+            </label>
+            <label class="org" htmlFor="Organization">
+              Organization
+              <input type="text" id="Organization" name="Organization" />
+            </label>
+          </div>
+          <div class="formRow">
+            <label class="body" htmlFor="body">
+              Comment or question*
+              <textarea
+                type="text"
+                id="body"
+                name="body"
+                maxlength="1200"
+              ></textarea>
+              <p class="lengthHint">200 words</p>
+            </label>
+          </div>
+          <div class="formRow submitRow">
+            <input
+              type="submit"
+              class="submit"
+              value="Submit"
+              id="submit-btn"
+            />
+          </div>
+          <div class="formRow">
+            <div id="error-msg" class="error">
+              Some required fields above are not filled in, please complete
+              before submitting.
+            </div>
+          </div>
+          <div id="success-msg" class="formRow">
+            <div class="success">Feedback Submitted</div>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="footer">
       <div class="content">
@@ -62,6 +128,68 @@
         /></a>
       </div>
     </div>
+    <script>
+      const handleSubmit = (event) => {
+        var axios = require("axios");
+        // prevent defaults and clear messages
+        event.preventDefault();
+        successMsg.style.display = "none";
+        errorMsg.style.display = "none";
+
+        // construct object with form data
+        const data = Object.fromEntries(new FormData(event.target));
+
+        // check for required fields
+        for (field in data) {
+          if (field !== "Organization") {
+            console.log(data[field]);
+            if (data[field] == "") {
+              errorMsg.style.display = "block";
+              return;
+            }
+          }
+        }
+
+        //add more metadata for lambda emailer
+        data["subject"] = "New message from IDEA Landing site contact form";
+        data["site"] = "idea";
+
+        submitBtn.value = "Submitting...";
+        //   data["subject"] = "New message from Schmidt";
+        //   data["site"] = "schmidt";
+        //   setErrorMessage("");
+        //   setSubmitButtonText("Submitting...");
+        //   axios
+        //     .post(
+        //       "https://9a8pmml6ca.execute-api.us-east-1.amazonaws.com/submit",
+        //       JSON.stringify(data),
+        //       { headers: { "Content-Type": "application/json" } }
+        //     )
+        //     .then(() => {
+        //       setSuccessMessage(<div class="success">Feedback Submitted</div>);
+        //       setSubmitButtonText("Submit");
+        //     })
+        //     .catch((error) => {
+        //       console.log(error);
+        //       setErrorMessage(
+        //         <div className={styles.error}>
+        //           There was an error submitting your request, please check your
+        //           network connection and try again.
+        //         </div>
+        //       );
+        //     });
+        // }
+        submitBtn.value = "Submit";
+        successMsg.style.display = "block";
+      };
+      const form = document.getElementById("contact-form");
+      const successMsg = document.getElementById("success-msg");
+      const errorMsg = document.getElementById("error-msg");
+      const submitBtn = document.getElementById("submit-btn");
+      successMsg.style.display = "none";
+      errorMsg.style.display = "none";
+      form.addEventListener("submit", handleSubmit);
+    </script>
     <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
       /**
