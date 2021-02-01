@@ -104,6 +104,10 @@
               Some required fields above are not filled in, please complete
               before submitting.
             </div>
+            <div id="error-msg-2" class="error">
+              There was an error submitting your request, please check your
+              network connection and try again.
+            </div>
           </div>
           <div id="success-msg" class="formRow">
             <div class="success">Feedback Submitted</div>
@@ -130,11 +134,11 @@
     </div>
     <script>
       const handleSubmit = (event) => {
-        var axios = require("axios");
         // prevent defaults and clear messages
         event.preventDefault();
         successMsg.style.display = "none";
         errorMsg.style.display = "none";
+        errorMsg2.style.display = "none";
 
         // construct object with form data
         const data = Object.fromEntries(new FormData(event.target));
@@ -142,7 +146,6 @@
         // check for required fields
         for (field in data) {
           if (field !== "Organization") {
-            console.log(data[field]);
             if (data[field] == "") {
               errorMsg.style.display = "block";
               return;
@@ -153,43 +156,36 @@
         //add more metadata for lambda emailer
         data["subject"] = "New message from IDEA Landing site contact form";
         data["site"] = "idea";
-
+        console.log(data);
         submitBtn.value = "Submitting...";
-        //   data["subject"] = "New message from Schmidt";
-        //   data["site"] = "schmidt";
-        //   setErrorMessage("");
-        //   setSubmitButtonText("Submitting...");
-        //   axios
-        //     .post(
-        //       "https://9a8pmml6ca.execute-api.us-east-1.amazonaws.com/submit",
-        //       JSON.stringify(data),
-        //       { headers: { "Content-Type": "application/json" } }
-        //     )
-        //     .then(() => {
-        //       setSuccessMessage(<div class="success">Feedback Submitted</div>);
-        //       setSubmitButtonText("Submit");
-        //     })
-        //     .catch((error) => {
-        //       console.log(error);
-        //       setErrorMessage(
-        //         <div className={styles.error}>
-        //           There was an error submitting your request, please check your
-        //           network connection and try again.
-        //         </div>
-        //       );
-        //     });
-        // }
+
+        //submit request
+        axios
+          .post(
+            "https://9a8pmml6ca.execute-api.us-east-1.amazonaws.com/submit",
+            JSON.stringify(data),
+            { headers: { "Content-Type": "application/json" } }
+          )
+          .then(() => {
+            successMsg.style.display = "block";
+          })
+          .catch((error) => {
+            console.log(error);
+            errorMsg2.style.display = "block";
+          });
         submitBtn.value = "Submit";
-        successMsg.style.display = "block";
       };
       const form = document.getElementById("contact-form");
       const successMsg = document.getElementById("success-msg");
       const errorMsg = document.getElementById("error-msg");
+      const errorMsg2 = document.getElementById("error-msg-2");
       const submitBtn = document.getElementById("submit-btn");
       successMsg.style.display = "none";
       errorMsg.style.display = "none";
+      errorMsg2.style.display = "none";
       form.addEventListener("submit", handleSubmit);
     </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
     <script>
       /**
