@@ -586,6 +586,12 @@ $spacing: 10px;
           position: absolute;
           left: 40px;
           top: 0px;
+          @media (max-width: 650px) {
+            left: 15%;
+          }
+          @media (max-width: 500px) {
+            display: none;
+          }
         }
       }
     }
