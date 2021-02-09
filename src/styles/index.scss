@@ -240,6 +240,11 @@ p {
           max-width: 100%;
         }
       }
+      p {
+        &:not(:first-of-type) {
+          margin-top: 15px;
+        }
+      }
       .citation {
         margin-top: 15px;
         font-style: italic;
@@ -565,7 +570,7 @@ $spacing: 10px;
       &:not(:last-child) {
         border-right: 1px solid $black;
       }
-      &:nth-child(2){
+      &:nth-child(2) {
         //bump the height of GU logo slightly
         img {
           height: 50px;
