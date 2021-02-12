@@ -13,7 +13,7 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="assets/favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -22,7 +22,7 @@
     />
     <link rel="stylesheet" href="styles/index.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Georgetown Infectious Disease Atlas (GIDA)</title>
+    <title>International Disease and Events Analysis (IDEA)</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -30,583 +30,830 @@
     />
   </head>
   <body>
+    <nav class="navbar home">
+      <div class="wrapper">
+        <div></div>
+        <div class="nav-links">
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="line"></div>
     <div class="container">
-      <img src="assets/logo-title.png" />
-      <p>
-        The GEORGETOWN INFECTIOUS DISEASE ATLAS is an integrated research
-        platform providing access to a comprehensive set of global health
-        security visualization dashboards, decision support tools, and data
-        libraries developed by the Center for Global Health Science and Security
-        at Georgetown University. See below for a description of each tool,
-        links to the sites, and access to a quick download of the data from
-        each.
-      </p>
-      <div class="header"></div>
-      <div class="header">WEBSITES AND TOOLS</div>
-
-      <!-- COVID AMP CARD -->
-      <div class="card">
-        <div>
-          <div>COVID AMP<br />ANALYSIS AND<br />MAPPING OF POLICIES</div>
-          <div class="subheader">
-            (a product of
-            <a target="_blank" href="https://covid-local.org">COVID-Local</a>)
-          </div>
-          <a class="link" target="_blank" href="https://covid-local.org/amp"
-            >covid-local.org/amp</a
-          >
-          <div><img src="assets/page-screenshots/covid-amp.png" /></div>
-        </div>
-        <div>
-          <p>
-            The COVID Analysis and Mapping of Policies (AMP) visualization tool
-            is a comprehensive database of policies and plans to address the
-            COVID-19 pandemic. Decision-makers can use COVID AMP’s user-friendly
-            interface to easily identify effective policies and plans to reduce
-            the impacts of the COVID-19 pandemic.
-          </p>
-          <p>
-            COVID AMP is part of the
-            <a target="_blank" href="https://covid-local.org">COVID-Local</a>
-            suite of free resources developed for local decision-makers who are
-            working to keep their communities safe during the COVID-19 pandemic.
-            The COVID AMP library includes policies and plans published by
-            subnational governments or private and non-profit organizations, in
-            addition to those released by national governments.
-          </p>
-          <!-- <div>
-            Key citation: Katz R, Graeden E, Kerr J, Eaneff S. (2019). Tracking
-            the flow of funds in global health security. EcoHealth. 1-8. DOI:
-            10.1007/s10393-019-01402-w.
-          </div> -->
-          <a class="bottom" target="_blank" href="https://covid-local.org/amp"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-
-          <a
-            target="_blank"
-            href="downloads/COVID AMP - Policy and Plan Data Export.xlsx"
-            type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            download
-            ><button>
-              <div>
-                <img
-                  class="download-icon"
-                  src="assets/download.svg"
-                  alt="Download"
-                />
-                <div>
-                  Click for data download
-                </div>
-                <div>
-                  download: (COVID AMP - Policy and Plan Data Export.xlsx, ~11
-                  MB)
-                </div>
-              </div>
-            </button></a
-          >
-        </div>
+      <img
+        class="hero"
+        src="assets/logo-title.png"
+        alt="International Disease and Events Analysis logo"
+      />
+      <div class="landing-text">
+        <p class="opening-para">
+          The International Disease and Events Analysis (IDEA) platform is a
+          suite of integrated research tools, including global health security
+          visualization dashboards, decision support tools, and data libraries
+          developed by the Georgetown University Center for Global Health
+          Science and Security.<br /><br />
+          See below for a description of each tool, links to the sites, and
+          access to a quick download of the data from each.
+        </p>
       </div>
-      <!-- /COVID AMP CARD -->
+      <div class="cards">
+        <h1 class="no-top-margin">Websites and tools</h1>
 
-      <!-- CARD 1 -->
-      <div class="card">
-        <div>
-          <div>GLOBAL HEALTH<br />SECURITY TRACKING</div>
-          <a class="link" target="_blank" href="https://tracking.ghscosting.org"
-            >tracking.ghscosting.org</a
-          >
-          <div><img src="assets/page-screenshots/img1.png" /></div>
-        </div>
-        <div>
-          <p>
-            The Global Health Security Tracking tool is an integrated mapping
-            and data visualization platform showing the flow of international
-            funding for global health security from funder to recipient
-            globally. The tool tracks funding targeted to improve health
-            security core capacities, funds for outbreak response, and health
-            security metrics.
-          </p>
-          <div>
-            Key citation: Katz R, Graeden E, Kerr J, Eaneff S. (2019). Tracking
-            the flow of funds in global health security. EcoHealth. 1-8. DOI:
-            10.1007/s10393-019-01402-w.
-          </div>
-          <a
-            class="bottom"
-            target="_blank"
-            href="https://tracking.ghscosting.org"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-
-          <a
-            target="_blank"
-            href="downloads/GHS Tracking - Full Data Export 2021-01-29.xlsx"
-            download
-            ><button>
-              <div>
-                <img
-                  class="download-icon"
-                  src="assets/download.svg"
-                  alt="Download"
-                />
-                <div>
-                  Click for data download
-                </div>
-                <div>
-                  download: (GHS Tracking - Full Data Export 2021-01-29.xlsx,
-                  ~20 MB)
-                </div>
-              </div>
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD 1 -->
-
-      <!-- CARD: Health Security Net -->
-      <div class="card">
-        <div>
-          <div>HEALTH SECURITY NET</div>
-          <a class="link" target="_blank" href="https://healthsecuritynet.org/"
-            >healthsecuritynet.org</a
-          >
-          <div><img src="assets/page-screenshots/hsn.png" /></div>
-        </div>
-        <div>
-          <p>
-            Health Security Net is a publicly accessible, centralized database
-            of warnings, evaluations, oversight efforts, strategies, and other
-            documents that relate to pandemics prior to 2020. It provides a
-            readily available source of information for policymakers,
-            researchers, journalists, the general public, and other interested
-            parties to access documents written about pandemic risk in the past;
-            unearth patterns that reveal why response may be insufficient to
-            date; and develop improved policies for the future.
-          </p>
-          <a
-            class="bottom"
-            target="_blank"
-            href="https://healthsecuritynet.org/"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-          <a
-            target="_blank"
-            href="downloads/Health Security Net - Data Download.xlsx"
-            download
-            ><button>
-              <div>
-                <img
-                  class="download-icon"
-                  src="assets/download.svg"
-                  alt="Download"
-                />
-                <div>
-                  Click for data download
-                </div>
-                <div>
-                  download: (Health Security Net - Data Download.xlsx, ~0.5 MB)
-                </div>
-              </div>
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD  -->
-
-      <!-- CARD 2 -->
-      <div class="card">
-        <div>
-          <div>GEORGETOWN OUTBREAK ACTIVITY LIBRARY</div>
-          <a class="link" target="_blank" href="https://goal.ghscosting.org"
-            >goal.ghscosting.org</a
-          >
-          <div><img src="assets/page-screenshots/img2.png" /></div>
-        </div>
-        <div>
-          <p>
-            The Georgetown Outbreak Activity Library (GOAL) provides rapid
-            access and search for a comprehensive library of the activities
-            required for response to disease outbreaks, including case studies,
-            and information about the stakeholders and guidance mapped to each
-            activity.
-          </p>
-
-          <a class="bottom" target="_blank" href="https://goal.ghscosting.org"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD 2 -->
-
-      <!-- CARD 3 -->
-      <div class="card">
-        <div>
-          <div>GEORGETOWN BIOSCENARIOS</div>
-          <a
-            class="link"
-            target="_blank"
-            href="https://bioscenarios.talusanalytics.com"
-            >bioscenarios.talusanalytics.com</a
-          >
-          <div><img src="assets/page-screenshots/img3.png" /></div>
-        </div>
-        <div>
-          <p>
-            Bioscenarios is a rapid visualization tool demonstrating the
-            diversity in biological outbreak scenarios, each coded by 12
-            characteristics and ranked by relative likelihood to cause
-            fatalities in humans and animals.
-          </p>
-          <div>
-            Key citation: Katz R, Graeden E, Kerr J. (2018). The complexity of
-            biological events. The Lancet Global Health. 6-2: 136-137. DOI:
-            10.1016/S2214-109X(17)30494-1.
-          </div>
-          <a
-            class="bottom"
-            target="_blank"
-            href="https://bioscenarios.talusanalytics.com"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD 3 -->
-
-      <!-- CARD 4 -->
-      <div class="card">
-        <div>
-          <div>DELIBERATE BIOLOGICAL EVENT TOOL</div>
-          <a class="link" target="_blank" href="https://dbe.talusanalytics.com"
-            >dbe.talusanalytics.com</a
-          >
-          <div><img src="assets/page-screenshots/img4.png" /></div>
-        </div>
-        <div>
-          <p>
-            Deliberate Biological Event (DBE) Tool is an interactive teaching
-            tool that aligns policies with the stakeholders mandated or
-            authorized to act in responding to a deliberate biological outbreak
-            (e.g., bioterror or state-sponsored attack), including a static
-            visualization of how nations can request assistance for such events.
-            Each policy is associated with when during an outbreak it is
-            triggered and the responsibilities associated with organizations
-            from different sectors affected by the policy in response to a DBE.
-          </p>
-          <div>
-            Key citation: Katz R, Graeden E, Abe K, Attal-Juncqua A, Boyce M,
-            Eaneff S. (2018). Mapping stakeholder and policies in response to
-            deliberate biological events. Heliyon. 4(12): e01091. DOI:
-            10.1016/j.heliyon.2018.e01091.
-          </div>
-          <a
-            class="bottom"
-            target="_blank"
-            href="https://dbe.talusanalytics.com"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD 4 -->
-
-      <!-- CARD 5 -->
-      <div class="card">
-        <div>
-          <div>IHR COSTING TOOL</div>
-          <a class="link" target="_blank" href="https://ghscosting.org"
-            >ghscosting.org</a
-          >
-          <div><img src="assets/page-screenshots/img5.jpg" /></div>
-        </div>
-        <div>
-          <p>
-            The IHR Costing Tool helps users generate and review cost estimates
-            to support practical planning for sustainable capacity development
-            to prevent, detect, and respond to public health threats, as defined
-            by the International Health Regulations (IHR). This tool provides a
-            framework to calculate costs for implementing and enhancing IHR core
-            capacities. Costs are estimated by applying country-specific user
-            input data to cost calculations developed using best practices for
-            achieving the technical standards specified in the Joint External
-            Evaluation Tool (JEE).
-          </p>
-          <div>
-            Key citation: Katz R, Graeden E, Eaneff S, Kerr J. Strengthening
-            health security- an intuitive and user friendly tool to estimate
-            country level costs. BMJ Glob Health 2018;3:e000864. DOI:
-            10.1136/bmjgh-2018-000864.
-          </div>
-          <a class="bottom" target="_blank" href="https://ghscosting.org"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-
-          <a
-            target="_blank"
-            href="downloads/IHR Costing Tool - Costing Worksheet - 2020-03-10.xlsx"
-            download
-          >
-            <button>
-              <div>
-                <img
-                  class="download-icon"
-                  src="assets/download.svg"
-                  alt="Download"
-                />
-                <div>
-                  Click for costing template
-                </div>
-                <div>
-                  download: (IHR Costing Tool - Costing Worksheet -
-                  2020-03-10.xlsx, 404 KB)
-                </div>
-              </div>
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD 5 -->
-
-      <!-- CARD 6 -->
-      <div class="card">
-        <div>
-          <div>
-            DECISION SUPPORT<br />
-            TOOL FOR NEGLECTED TROPICAL DISEASES
-          </div>
-          <a
-            class="link"
-            target="_blank"
-            href="http://integratedntd.talusanalytics.com"
-          >
-            integratedntd.talusanalytics.com
-          </a>
-          <div><img src="assets/page-screenshots/img6.jpg" /></div>
-        </div>
-        <div>
-          <p>
-            The Integrated NTD (Neglected Tropical Diseases) Tool is a web-based
-            decision support tool to aid policy makers in decisions regarding
-            the benefits of integrating malaria and schistosomiasis control
-            programs. The user interface translates epidemiological parameters
-            into easily interpretable recommendations.
-          </p>
-          <div>
-            Key citation: Standley CJ, Graeden E, Kerr J, Sorrell EM, Katz R.
-            Decision support for evidence-based integration of disease control:
-            A proof of concept for malaria and schistosomiasis. PLOS Neglected
-            Tropical Diseases, 2018; 12 (4): e0006328. DOI:
-            10.1371/journal.pntd.0006328
-          </div>
-          <a
-            class="bottom"
-            target="_blank"
-            href="http://integratedntd.talusanalytics.com"
-            ><button class="main">
-              Go to site
-            </button></a
-          >
-        </div>
-      </div>
-      <!-- /CARD 6 -->
-
-      <!-- CARD FINAL -->
-      <div class="card-final">
-        <div>
-          <div>OTHER HEALTH SECURITY DATASETS</div>
-          <div><img src="assets/page-screenshots/img7.png" /></div>
-        </div>
-
-        <div>
-          <div>
-            <div>SPAR DATA</div>
+        <!-- COVID AMP CARD -->
+        <div class="card">
+          <div class="left-block">
             <div>
-              We have collated all publicly available self-assessment
-              measurements of International Health Regulations capacity
-              implementation status from 2010 through 2017. These data are now
-              organized by a comprehensive data structure with International
-              Standard country codes and ready access to all longitudinal data
-              in a single table.
+              <img
+                class="screencap"
+                src="assets/page-screenshots/covid-amp.png"
+                alt="COVID AMP homepage"
+              />
             </div>
-            <a href="downloads/SPAR data, 2010-2017 - 052020.xlsx" download>
-              <button>
-                <div>
-                  <img
-                    class="download-icon"
-                    src="assets/download2.svg"
-                    alt="Download"
-                  />
-                  <div>
-                    Click for data download
-                  </div>
-                  <div>
-                    download: (SPAR data, 2010-2017 - 052020.xlsx, 1 MB)
-                  </div>
-                </div>
-              </button></a
+            <a class="link" target="_blank" href="https://covid-local.org/amp"
+              >covid-local.org/amp</a
             >
           </div>
-          <div>
-            <div>PVS SCORE DATA</div>
-            <div>
-              The World Organisation for Animal Health (OIE) developed the
-              Performance of Veterinary Services (PVS) Pathway as a
-              capacity-building platform for the sustainable improvement of
-              national Veterinary Services. This tool enables national
-              veterinary authorities to understand their strengths and
-              weaknesses using a globally consistent methodology based on
-              international standards. We have translated the publicly available
-              PVS levels of advancement (i.e., scores) into a searchable
-              spreadsheet; scores range from 1 to 5, with 5 being the optimum
-              designation. These data have also been incorporated into the
-              <a target="_blank" href="https://tracking.ghscosting.org">
-                Global Health Security Tracking tool</a
-              >.
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/amp.png"
+                  alt="COVID AMP logo"
+                />
+              </div>
+              <p>
+                The COVID Analysis and Mapping of Policies (AMP) visualization
+                tool is a comprehensive database of policies and plans to
+                address the COVID-19 pandemic. Decision-makers can use COVID
+                AMP’s user-friendly interface to easily identify effective
+                policies and plans to reduce the impacts of the COVID-19
+                pandemic.
+              </p>
+              <p>
+                COVID AMP is part of the
+                <a target="_blank" class="link" href="https://covid-local.org"
+                  >COVID-Local</a
+                >
+                suite of free resources developed for local decision-makers who
+                are working to keep their communities safe during the COVID-19
+                pandemic.
+              </p>
+              <p>
+                A research paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://georgetown.app.box.com/s/ix15j0jx14hpjte5l7oi8nvsgkkk2un6"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Katz R., Graeden E. COVIDAMP.ORG: A Global Resource for Governance in the Time of COVID. Research Brief 2020-07. Washington: Georgetown University Center for Global Health Science & Security, 2020.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://georgetown.app.box.com/s/ix15j0jx14hpjte5l7oi8nvsgkkk2un6"
+                >
+                https://georgetown.app.box.com/s/ix15j0jx14hpjte5l7oi8nvsgkkk2un6
+                </a>
+              </p>
             </div>
-            <div class="citation">
-              Key citation: World Organisation for Animal Health website. OIE
-              PVS Pathway: PVS Evaluation Reports.
+            <div class="buttons">
+              <a target="_blank" href="https://covid-local.org/amp">
+                <button class="site">Go to site</button>
+              </a>
               <a
                 target="_blank"
-                href="https://www.oie.int/solidarity/pvs-evaluations/pvs-evaluation-reports/"
+                href="downloads/COVID AMP - Policy and Plan Data Export.xlsx"
+                type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                download
               >
-                https://www.oie.int/solidarity/pvs-evaluations/pvs-evaluation-reports/
+                <button class="download">
+                  <img
+                    class="download-icon"
+                    src="assets/download.png"
+                    alt="Download"
+                  />
+                  <div>Download data (.xlsx, ~11MB)</div>
+                </button>
               </a>
             </div>
-            <a target="_blank" href="downloads/PVS data - 060120.xlsx" download
-              ><button>
-                <div>
-                  <img
-                    class="download-icon"
-                    src="assets/download2.svg"
-                    alt="Download"
-                  />
-                  <div>
-                    Click for data download
-                  </div>
-                  <div>
-                    download: (PVS data - 060120.xlsx, ~1 MB)
-                  </div>
-                </div>
-              </button></a
-            >
           </div>
-          <div>
-            <div>DONS DATA</div>
+        </div>
+        <!-- /COVID AMP CARD -->
+
+        <!-- GHS TRACKING CARD -->
+        <div class="card">
+          <div class="left-block">
             <div>
-              We have migrated several decades of WHO’s prose reports of Disease
-              Outbreak News (DONs) into a searchable spreadsheet. These data are
-              now organized by a comprehensive data structure for consistent
-              naming conventions for countries, outbreaks, type of disease
-              event, and standard outbreak measures. The structured data are
-              available for download.
+              <img
+                class="screencap"
+                src="assets/page-screenshots/tracking.png"
+                alt="GHS Tracking homepage"
+              />
             </div>
             <a
+              class="link"
               target="_blank"
-              href="downloads/DONs data - 060820.xlsx"
-              download
+              href="https://tracking.ghscosting.org"
+              >tracking.ghscosting.org</a
             >
-              <button>
-                <div>
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/tracking.png"
+                  alt="Global Health Security Tracking logo"
+                />
+              </div>
+              <p>
+                The Global Health Security Tracking tool is an integrated
+                mapping and data visualization platform showing the flow of
+                international funding for global health security from funder to
+                recipient globally. The tool tracks funding targeted to improve
+                health security core capacities, funds for outbreak response,
+                and health security metrics.
+              </p>
+              <p>
+                A peer-reviewed paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://link.springer.com/article/10.1007%2Fs10393-019-01402-w"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Katz, R; Graeden, E; Kerr, J; Eaneff, S. “Tracking the Flow of Funds in Global Health Security.” EcoHealth (2019) 16:298-305.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://link.springer.com/article/10.1007%2Fs10393-019-01402-w"
+                >
+                  https://link.springer.com/article/10.1007%2Fs10393-019-01402-w
+                </a>
+              </p>
+            </div>
+            <div class="buttons">
+              <a target="_blank" href="https://tracking.ghscosting.org">
+                <button class="site">Go to site</button>
+              </a>
+              <a
+                target="_blank"
+                href="downloads/GHS Tracking - Data Export 2020-07-29.xlsx"
+                type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                download
+              >
+                <button class="download">
                   <img
                     class="download-icon"
-                    src="assets/download2.svg"
+                    src="assets/download.png"
                     alt="Download"
                   />
-                  <div>
-                    Click for data download
-                  </div>
-                  <div>
-                    download: (DONs data - 060820.xlsx, ~1 MB)
-                  </div>
-                </div>
-              </button>
+                  <div>Download data (.xlsx, ~10MB)</div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /GHS TRACKING CARD -->
+
+        <!-- SCHMIDT CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/schmidt.png"
+                alt="Health Security Net homepage"
+              />
+            </div>
+            <a
+              class="link"
+              target="_blank"
+              href="https://healthsecuritynet.org/"
+              >healthsecuritynet.org</a
+            >
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/schmidt.png"
+                  alt="Health Security Net logo"
+                />
+              </div>
+              <p>
+                Health Security Net is a publicly accessible, centralized
+                database of warnings, evaluations, oversight efforts,
+                strategies, and other documents that relate to pandemics prior
+                to 2020. It provides a readily available source of information
+                for policymakers, researchers, journalists, the general public,
+                and other interested parties to access documents written about
+                pandemic risk in the past; unearth patterns that reveal why
+                response may be insufficient to date; and develop improved
+                policies for the future.
+              </p>
+              <p>
+                A research paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://healthsecuritynet.org/Health_Security_Net_Report.pdf"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: 25 Years of Pandemic Warnings: Health Security
+                Net, A Global Health Security Library. (2021). Georgetown
+                University.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://healthsecuritynet.org/Health_Security_Net_Report.pdf"
+                >
+                  https://healthsecuritynet.org/Health_Security_Net_Report.pdf
+                </a>
+              </p>
+            </div>
+            <div class="buttons">
+              <a target="_blank" href="https://healthsecuritynet.org/">
+                <button class="site">Go to site</button>
+              </a>
+              <a
+                target="_blank"
+                href="downloads/Health Security Net - Data Download.xlsx"
+                type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                download
+              >
+                <button class="download">
+                  <img
+                    class="download-icon"
+                    src="assets/download.png"
+                    alt="Download"
+                  />
+                  <div>Download data (.xlsx, ~0.5MB)</div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /SCHMIDT CARD -->
+
+        <!-- GOAL CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/goal.png"
+                alt="Georgetown Outbreak Activity Library homepage"
+              />
+            </div>
+            <a class="link" target="_blank" href="https://goal.ghscosting.org"
+              >goal.ghscosting.org</a
+            >
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img class="card-logo" src="assets/goal.png" alt="GOAL logo" />
+              </div>
+              <p>
+                The Georgetown Outbreak Activity Library (GOAL) provides rapid
+                access and search for a comprehensive library of the activities
+                required for response to disease outbreaks, including case
+                studies, and information about the stakeholders and guidance
+                mapped to each activity.
+              </p>
+              <p>
+                A research paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://georgetown.app.box.com/s/p64gdearegdw9rdtnn0044o8ole7g7nv"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Outbreak Activity Library: An online,
+                user-friendly compilation of activities essential for effective
+                outbreak response. (2020). Georgetown University.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://georgetown.app.box.com/s/p64gdearegdw9rdtnn0044o8ole7g7nv"
+                >
+                  https://georgetown.app.box.com/s/p64gdearegdw9rdtnn0044o8ole7g7nv
+                </a>
+              </p>
+            </div>
+            <div class="buttons">
+              <a target="_blank" href="https://goal.ghscosting.org">
+                <button class="site">Go to site</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /GOAL CARD -->
+
+        <!-- GU BIOSCEN CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/img3.png"
+                alt="Georgetown Bioscenarios homepage"
+              />
+            </div>
+            <a
+              class="link"
+              target="_blank"
+              href="https://bioscenarios.talusanalytics.com"
+              >bioscenarios.talusanalytics.com</a
+            >
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/gu_bioscen.png"
+                  alt="Georgetown Bioscenarios logo"
+                />
+              </div>
+              <p>
+                Bioscenarios is a rapid visualization tool demonstrating the
+                diversity in biological outbreak scenarios, each coded by 12
+                characteristics and ranked by relative likelihood to cause
+                fatalities in humans and animals.
+              </p>
+              <p>
+                A peer-reviewed paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(17)30494-1/supplemental"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Katz R, Graeden E, Kerr J. (2018). The complexity
+                of biological events. The Lancet Global Health. 6-2: 136-137.
+                DOI: 10.1016/S2214-109X(17)30494-1.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(17)30494-1/supplemental"
+                  >https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(17)30494-1/supplemental</a
+                >
+              </p>
+            </div>
+            <div class="buttons">
+              <a target="_blank" href="https://bioscenarios.talusanalytics.com">
+                <button class="site">Go to site</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /GU BIOSCEN CARD -->
+
+        <!-- DBE CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/dbe.png"
+                alt="Deliberate Biological Events homepage"
+              />
+            </div>
+            <a
+              class="link"
+              target="_blank"
+              href="https://dbe.talusanalytics.com"
+              >dbe.talusanalytics.com</a
+            >
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/dbe.png"
+                  alt="Deliberate Biological Events logo"
+                />
+              </div>
+              <p>
+                Deliberate Biological Event (DBE) Tool is an interactive
+                teaching tool that aligns policies with the stakeholders
+                mandated or authorized to act in responding to a deliberate
+                biological outbreak (e.g., bioterror or state-sponsored attack),
+                including a static visualization of how nations can request
+                assistance for such events. Each policy is associated with when
+                during an outbreak it is triggered and the responsibilities
+                associated with organizations from different sectors affected by
+                the policy in response to a DBE.
+              </p>
+              <p>
+                A peer-reviewed paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://www.sciencedirect.com/science/article/pii/S240584401832351X"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Katz R, Graeden E, Abe K, Attal-Juncqua A, Boyce
+                M, Eaneff S. (2018). Mapping stakeholder and policies in
+                response to deliberate biological events. Heliyon. 4(12):
+                e01091. DOI: 10.1016/j.heliyon.2018.e01091.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://www.sciencedirect.com/science/article/pii/S240584401832351X"
+                  >https://www.sciencedirect.com/science/article/pii/S240584401832351X</a
+                >
+              </p>
+            </div>
+            <div class="buttons">
+              <a target="_blank" href="https://dbe.talusanalytics.com">
+                <button class="site">Go to site</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /DBE CARD -->
+
+        <!-- IHR CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/img5.jpg"
+                alt="IHR Costing homepage"
+              />
+            </div>
+            <a class="link" target="_blank" href="https://ghscosting.org"
+              >ghscosting.org</a
+            >
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/ihr.png"
+                  alt="IHR Costing logo"
+                />
+              </div>
+              <p>
+                The IHR Costing Tool helps users generate and review cost
+                estimates to support practical planning for sustainable capacity
+                development to prevent, detect, and respond to public health
+                threats, as defined by the International Health Regulations
+                (IHR). This tool provides a framework to calculate costs for
+                implementing and enhancing IHR core capacities. Costs are
+                estimated by applying country-specific user input data to cost
+                calculations developed using best practices for achieving the
+                technical standards specified in the Joint External Evaluation
+                Tool (JEE).
+              </p>
+              <p>
+                A peer-reviewed paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://gh.bmj.com/content/3/4/e000864.abstract"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Katz R, Graeden E, Eaneff S, Kerr J. Strengthening
+                health security- an intuitive and user friendly tool to estimate
+                country level costs. BMJ Glob Health 2018;3:e000864. DOI:
+                10.1136/bmjgh-2018-000864.
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://gh.bmj.com/content/3/4/e000864.abstract"
+                  >https://gh.bmj.com/content/3/4/e000864.abstract</a
+                >
+              </p>
+            </div>
+            <div class="buttons">
+              <a target="_blank" href="https://ghscosting.org">
+                <button class="site">Go to site</button>
+              </a>
+              <a
+                target="_blank"
+                href="downloads/IHR Costing Tool - Costing Worksheet - 2020-03-10.xlsx"
+                type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                download
+              >
+                <button class="download">
+                  <img
+                    class="download-icon"
+                    src="assets/download.png"
+                    alt="Download"
+                  />
+                  <div>Download template (.xlsx, ~404KB)</div>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- /IHR CARD -->
+
+        <!-- NTD CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/ntd.png"
+                alt="Integrated NTD homepage"
+              />
+            </div>
+            <a
+              class="link"
+              target="_blank"
+              href="http://integratedntd.talusanalytics.com"
+            >
+              integratedntd.talusanalytics.com
             </a>
           </div>
-          <div>
-            <div>
-              RAPID URBAN HEALTH SECURITY ASSESSMENT (RUHSA) TOOL
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  src="assets/ntd.png"
+                  alt="Integrated NTD logo"
+                />
+              </div>
+              <p>
+                The Integrated NTD (Neglected Tropical Diseases) Tool is a
+                web-based decision support tool to aid policy makers in
+                decisions regarding the benefits of integrating malaria and
+                schistosomiasis control programs. The user interface translates
+                epidemiological parameters into easily interpretable
+                recommendations.
+              </p>
+              <p>
+                A peer-reviewed paper on this project is available
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0006328"
+                  >here</a
+                >.
+              </p>
+              <p class="citation">
+                Key citation: Standley CJ, Graeden E, Kerr J, Sorrell EM, Katz
+                R. Decision support for evidence-based integration of disease
+                control: A proof of concept for malaria and schistosomiasis.
+                PLOS Neglected Tropical Diseases, 2018; 12 (4): e0006328. DOI:
+                10.1371/journal.pntd.0006328
+                <br />
+                <a
+                  class="link"
+                  target="_blank"
+                  href="https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0006328"
+                  >https://journals.plos.org/plosntds/article?id=10.1371/journal.pntd.0006328
+              </p>
             </div>
-            <div>
-              The RUHSA Tool is intended to be a voluntary, collaborative, and
-              multisectoral resource for mayors and municipal public health
-              authorities to self-assess municipal capacities to prevent, detect
-              and rapidly respond to public health events. The tool was
-              developed by the Center by mapping numerous health security
-              guidance documents and frameworks and provides a holistic
-              perspective of the state of sub-national health security
-              capacities.
+            <div class="buttons">
+              <a target="_blank" href="http://integratedntd.talusanalytics.com">
+                <button class="site">Go to site</button>
+              </a>
             </div>
-            <a href="" download
-              ><button>
-                <div>
-                  <img
-                    class="download-icon"
-                    src="assets/download_disabled.svg"
-                    alt="Download"
-                  />
-                  <div>
-                    Available Summer 2020
-                  </div>
-                </div>
-              </button></a
-            >
           </div>
         </div>
-      </div>
-      <!-- /CARD FINAL -->
-      <div class="textblock">
-        <div>CITATION</div>
-        <p>
-          The Center for Global Health Science and Security working with Talus
-          Analytics has created this site to be used by researchers,
-          decision-makers and other interested parties. If you use data from
-          this site, please use the following citation:
-        </p>
-        <p>
-          Georgetown University Center for Global Health Science & Security.
-          Georgetown Infectious Disease Atlas (GIDA). Washington: Georgetown
-          University. Available at https://gida.ghscosting.org
-        </p>
-        <p>
-          We also ask that you let us know if you publish anything using data
-          from this site, so we can link to it. Contact us at
-          <a target="_blank" href="mailto:ihrcosting@georgetown.edu"
-            >ihrcosting@georgetown.edu</a
-          >.
-        </p>
-      </div>
-      <div class="footer">
-        <div class="content">
-          <a
-            target="_blank"
-            href="https://ghss.georgetown.edu/"
-            alt="Georgetown University Center for Global Health Science and Security"
-            ><img src="assets/logo-georgetown.png"/></a
-          ><a
-            target="_blank"
-            href="http://talusanalytics.com/"
-            alt="Talus Analytics, LLC"
-            ><img
-              src="assets/logo-talus.png"
-              style="height: 60px; position: relative; top: -5px;"
-            />
-            <div>Built by</div></a
-          >
+        <!-- /NTD CARD -->
+
+        <!-- GHSD CARD -->
+        <div class="card">
+          <div class="left-block">
+            <div>
+              <img
+                class="screencap"
+                src="assets/page-screenshots/idea.png"
+                alt="Excel spreadsheet"
+              />
+            </div>
+          </div>
+          <div class="right-block">
+            <div class="content">
+              <div class="logo-container">
+                <img
+                  class="card-logo"
+                  style="max-width: 90%"
+                  src="assets/ghs_data.png"
+                  alt="Global Health Security Datasets logo"
+                />
+              </div>
+              <div class="dataset-section">
+                <h2>SPAR DATA</h2>
+                <p>
+                  We have collated all publicly available self-assessment
+                  measurements of International Health Regulations capacity
+                  implementation status from 2010 through 2017. These data are
+                  now organized by a comprehensive data structure with
+                  International Standard country codes and ready access to all
+                  longitudinal data in a single table.
+                </p>
+                <div class="buttons">
+                  <a
+                    target="_blank"
+                    href="downloads/SPAR data, 2010-2017 - 052020.xlsx"
+                    type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    download
+                  >
+                    <button class="download">
+                      <img
+                        class="download-icon"
+                        src="assets/download.png"
+                        alt="Download"
+                      />
+                      <div>Download data (.xlsx, ~1MB)</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="dataset-section">
+                <h2>PVS SCORE DATA</h2>
+                <p>
+                  The World Organisation for Animal Health (OIE) developed the
+                  Performance of Veterinary Services (PVS) Pathway as a
+                  capacity-building platform for the sustainable improvement of
+                  national Veterinary Services. This tool enables national
+                  veterinary authorities to understand their strengths and
+                  weaknesses using a globally consistent methodology based on
+                  international standards. We have translated the publicly
+                  available PVS levels of advancement (i.e., scores) into a
+                  searchable spreadsheet; scores range from 1 to 5, with 5 being
+                  the optimum designation. These data have also been
+                  incorporated into the
+                  <a
+                    target="_blank"
+                    class="link"
+                    href="https://tracking.ghscosting.org"
+                  >
+                    Global Health Security Tracking tool</a
+                  >.
+                </p>
+                <p>
+                  A list of PVS evaluation reports is available
+                  <a
+                    class="link"
+                    target="_blank"
+                    href="https://www.oie.int/solidarity/pvs-evaluations/pvs-evaluation-reports/"
+                    >here</a
+                  >.
+                </p>
+                <p class="citation">
+                  Key citation: World Organisation for Animal Health website.
+                  OIE PVS Pathway: PVS Evaluation Reports.
+                  <a
+                    target="_blank"
+                    class="link"
+                    href="https://www.oie.int/solidarity/pvs-evaluations/pvs-evaluation-reports/"
+                  >
+                    https://www.oie.int/solidarity/pvs-evaluations/pvs-evaluation-reports/
+                  </a>
+                </p>
+                <div class="buttons">
+                  <a
+                    target="_blank"
+                    href="downloads/PVS data - 060120.xlsx"
+                    type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    download
+                  >
+                    <button class="download">
+                      <img
+                        class="download-icon"
+                        src="assets/download.png"
+                        alt="Download"
+                      />
+                      <div>Download data (.xlsx, ~1MB)</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="dataset-section">
+                <h2>DONS DATA</h2>
+                <p>
+                  We have migrated several decades of WHO’s prose reports of
+                  Disease Outbreak News (DONs) into a searchable spreadsheet.
+                  These data are now organized by a comprehensive data structure
+                  for consistent naming conventions for countries, outbreaks,
+                  type of disease event, and standard outbreak measures. The
+                  structured data are available for download.
+                </p>
+                <div class="buttons">
+                  <a
+                    target="_blank"
+                    href="downloads/DONs data - 060820.xlsx"
+                    type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    download
+                  >
+                    <button class="download">
+                      <img
+                        class="download-icon"
+                        src="assets/download.png"
+                        alt="Download"
+                      />
+                      <div>Download data (.xlsx, ~1MB)</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="dataset-section">
+                <h2>RAPID URBAN HEALTH SECURITY ASSESSMENT (RUHSA) TOOL</h2>
+                <p>
+                  The RUHSA Tool is intended to be a voluntary, collaborative,
+                  and multisectoral resource for mayors and municipal public
+                  health authorities to self-assess municipal capacities to
+                  prevent, detect and rapidly respond to public health events.
+                  The tool was developed by the Center by mapping numerous
+                  health security guidance documents and frameworks and provides
+                  a holistic perspective of the state of sub-national health
+                  security capacities.
+                </p>
+                <p>
+                  A peer-reviewed paper on this project is available
+                  <a
+                    class="link"
+                    target="_blank"
+                    href="https://gh.bmj.com/content/5/6/e002606"
+                    >here</a
+                  >.
+                </p>
+                <p class="citation">
+                  Key citation: Boyce MR, Katz R. Rapid urban health security
+                  assessment tool: a new resource for evaluating local-level
+                  public health preparedness. BMJ Global Health 2020;5:e002606.
+                  <br/>
+                  <a
+                    target="_blank"
+                    class="link"
+                    href="https://gh.bmj.com/content/5/6/e002606"
+                  >
+                    https://gh.bmj.com/content/5/6/e002606
+                  </a>
+                </p>
+                <div class="buttons">
+                  <a target="_blank" href="downloads/RUHSA.pdf" download>
+                    <button class="download">
+                      <img
+                        class="download-icon"
+                        src="assets/download.png"
+                        alt="Download"
+                      />
+                      <div>Download tool (.pdf, ~2.7MB)</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- /GHSD CARD -->
+      </div>
+    </div>
+    <div class="footer home">
+      <!-- Note: HTML updates to the footer here must also be made on the contact and about pages -->
+      <div class="content">
+        <a target="_blank" href="https://ghssidea.org">
+          <img
+            src="assets/logo-title.png"
+            alt="International Disease and Events Analysis"
+        /></a>
+        <a target="_blank" href="https://ghss.georgetown.edu/">
+          <img
+            src="assets/logo-georgetown.png"
+            alt="Georgetown University Center for Global Health Science and Security"
+        /></a>
+        <a target="_blank" href="http://talusanalytics.com/" class="talus-logo">
+          <img src="assets/logo-talus.png" alt="Talus Analytics, LLC"/>
+          <div class="built-by">Built by</div>
+        </a>
       </div>
     </div>
     <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
@@ -638,20 +885,20 @@
       window.cookieconsent.initialise({
         palette: {
           popup: {
-            background: "#d4d4d4"
+            background: "#d4d4d4",
           },
           button: {
-            background: "#0f234b"
-          }
+            background: "#0f234b",
+          },
         },
         position: "bottom-right",
         type: "opt-in",
         content: {
           message:
-            "The Georgetown Infectious Disease Atlas uses cookies to ensure you get the best experience possible."
+            "The International Disease and Events Analysis site uses cookies to ensure you get the best experience possible.",
         },
         // https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out
-        onInitialise: function(status) {
+        onInitialise: function (status) {
           var type = this.options.type;
           var didConsent = this.hasConsented();
           if (type == "opt-in" && didConsent) {
@@ -663,7 +910,7 @@
             setupGA(false);
           }
         },
-        onStatusChange: function(status, chosenBefore) {
+        onStatusChange: function (status, chosenBefore) {
           var type = this.options.type;
           var didConsent = this.hasConsented();
           if (type == "opt-in" && didConsent) {
@@ -675,7 +922,7 @@
             setupGA(false);
           }
         },
-        onRevokeChoice: function() {
+        onRevokeChoice: function () {
           var type = this.options.type;
           if (type == "opt-in") {
             // disable cookies
@@ -685,7 +932,7 @@
             // enable cookies
             setupGA(true);
           }
-        }
+        },
       });
     </script>
   </body>

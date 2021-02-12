@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-167624435-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      window["ga-disable-UA-167972896-1"] = true;
+    </script>
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — International Disease and Events Analysis (IDEA)</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="wrapper">
+        <a class="nav-logo-container" href="index.html">
+          <img src="assets/small-logo.png" alt="IDEA logo" class="nav-logo" />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a class="active" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+    <div class="contact">
+      <div class="content">
+        <h1>Contact</h1>
+        <p>
+          Contact us at
+          <a href="mailto:outbreaks@georgetown.edu" target="_blank" class="link"
+            >outbreaks@georgetown.edu</a
+          >
+          or through the form below.
+        </p>
+        <form
+          class="main"
+          id="contact-form"
+          aria-label="Contact us"
+          method="post"
+        >
+          <div class="formRow">
+            <label class="firstName" htmlFor="First_Name">
+              First name*
+              <input type="text" id="First_Name" name="First_Name" />
+            </label>
+            <label class="lastName" htmlFor="Last_Name">
+              Last name*
+              <input type="text" id="Last_Name" name="Last_Name" />
+            </label>
+          </div>
+
+          <div class="formRow">
+            <label class="email" htmlFor="Email">
+              Email*
+              <input type="email" id="Email" name="Email" />
+            </label>
+            <label class="org" htmlFor="Organization">
+              Organization
+              <input type="text" id="Organization" name="Organization" />
+            </label>
+          </div>
+          <div class="formRow">
+            <label class="body" htmlFor="body">
+              Comment or question*
+              <textarea
+                type="text"
+                id="body"
+                name="body"
+                maxlength="1200"
+              ></textarea>
+              <p class="lengthHint">200 words</p>
+            </label>
+          </div>
+          <div class="formRow submitRow">
+            <input
+              type="submit"
+              class="submit"
+              value="Submit"
+              id="submit-btn"
+            />
+          </div>
+          <div class="formRow">
+            <div id="error-msg" class="error">
+              Some required fields above are not filled in, please complete
+              before submitting.
+            </div>
+            <div id="error-msg-2" class="error">
+              There was an error submitting your request, please check your
+              network connection and try again.
+            </div>
+          </div>
+          <div id="success-msg" class="formRow">
+            <div class="success">Feedback Submitted</div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="content">
+        <a target="_blank" href="https://ghssidea.org">
+          <img
+            src="assets/logo-title.png"
+            alt="International Disease and Events Analysis"
+        /></a>
+        <a target="_blank" href="https://ghss.georgetown.edu/">
+          <img
+            src="assets/logo-georgetown.png"
+            alt="Georgetown University Center for Global Health Science and Security"
+        /></a>
+        <a target="_blank" href="http://talusanalytics.com/" class="talus-logo">
+          <img src="assets/logo-talus.png" alt="Talus Analytics, LLC" />
+          <div class="built-by">Built by</div>
+        </a>
+      </div>
+    </div>
+    <script>
+      const handleSubmit = (event) => {
+        // prevent defaults and clear messages
+        event.preventDefault();
+        successMsg.style.display = "none";
+        errorMsg.style.display = "none";
+        errorMsg2.style.display = "none";
+
+        // construct object with form data
+        const data = Object.fromEntries(new FormData(event.target));
+
+        // check for required fields
+        for (field in data) {
+          if (field !== "Organization") {
+            if (data[field] == "") {
+              errorMsg.style.display = "block";
+              return;
+            }
+          }
+        }
+
+        //add more metadata for lambda emailer
+        data["subject"] = "New message from IDEA Landing site contact form";
+        data["site"] = "idea";
+        console.log(data);
+        submitBtn.value = "Submitting...";
+
+        //submit request
+        axios
+          .post(
+            "https://9a8pmml6ca.execute-api.us-east-1.amazonaws.com/submit",
+            JSON.stringify(data),
+            { headers: { "Content-Type": "application/json" } }
+          )
+          .then(() => {
+            successMsg.style.display = "block";
+          })
+          .catch((error) => {
+            console.log(error);
+            errorMsg2.style.display = "block";
+          });
+        submitBtn.value = "Submit";
+      };
+      const form = document.getElementById("contact-form");
+      const successMsg = document.getElementById("success-msg");
+      const errorMsg = document.getElementById("error-msg");
+      const errorMsg2 = document.getElementById("error-msg-2");
+      const submitBtn = document.getElementById("submit-btn");
+      successMsg.style.display = "none";
+      errorMsg.style.display = "none";
+      errorMsg2.style.display = "none";
+      form.addEventListener("submit", handleSubmit);
+    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/cookieconsent.min.js" data-cfasync="false"></script>
+    <script>
+      /**
+       * If consent is given for cookies, add gtag cookies
+       * TODO uncomment lines below that set GA cookies and replace XXX with
+       * correct tag for site after GA is set up.
+       * @method setupGA
+       * @return {[type]} [description]
+       */
+      function setupGA(allowed) {
+        if (!allowed) {
+          window["ga-disable-UA-167972896-1"] = true;
+        } else {
+          window["ga-disable-UA-167972896-1"] = false;
+          /**
+           * Helper function for defining gtag cookies
+           * @method gtag
+           * @return {[type]} [description]
+           */
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "UA-167972896-1");
+        }
+      }
+      window.cookieconsent.initialise({
+        palette: {
+          popup: {
+            background: "#d4d4d4",
+          },
+          button: {
+            background: "#0f234b",
+          },
+        },
+        position: "bottom-right",
+        type: "opt-in",
+        content: {
+          message:
+            "The International Disease and Events Analysis site uses cookies to ensure you get the best experience possible.",
+        },
+        // https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out
+        onInitialise: function (status) {
+          var type = this.options.type;
+          var didConsent = this.hasConsented();
+          if (type == "opt-in" && didConsent) {
+            // enable cookies
+            setupGA(true);
+          }
+          if (type == "opt-out" && !didConsent) {
+            // disable cookies
+            setupGA(false);
+          }
+        },
+        onStatusChange: function (status, chosenBefore) {
+          var type = this.options.type;
+          var didConsent = this.hasConsented();
+          if (type == "opt-in" && didConsent) {
+            // enable cookies
+            setupGA(true);
+          }
+          if (type == "opt-out" && !didConsent) {
+            // disable cookies
+            setupGA(false);
+          }
+        },
+        onRevokeChoice: function () {
+          var type = this.options.type;
+          if (type == "opt-in") {
+            // disable cookies
+            setupGA(false);
+          }
+          if (type == "opt-out") {
+            // enable cookies
+            setupGA(true);
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
