@@ -3,7 +3,7 @@ import React from 'react'
 import './Footer.scss'
 
 const Footer = () => (
-  <div className="footer home">
+  <div className={'footer home'}>
     <div className="content">
       <a target="_blank" href="https://ghssidea.org">
         <img
