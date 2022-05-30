@@ -34,8 +34,12 @@ const Card = ({ project }: CardProps) => {
           <CMS.Image
             name={project.data.Logo_Name[0].data.Name}
             data={logoData}
-            imgClassName="card-logo"
-            imgStyle={{ objectFit: 'contain', objectPosition: 'left center' }}
+            // imgClassName="card-logo"
+            imgStyle={{
+              objectFit: 'contain',
+              objectPosition: 'left center',
+            }}
+            style={{ height: 80, objectFit: 'contain' }}
           />
         </div>
         <div
