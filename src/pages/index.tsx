@@ -9,6 +9,8 @@ import useIndexPageData from '../cmsHooks/useIndexPageData'
 import HomepageNav from 'components/layout/Nav/HomepageNav'
 import Cards from 'components/landingPage/Cards/Cards'
 
+import '../components/layout/oldStaticSiteStyles/index.scss'
+
 const IndexPage = (): JSX.Element => {
   const data = useIndexPageData()
 
