@@ -7,6 +7,7 @@ import Main from '../components/layout/Main'
 
 import useIndexPageData from '../cmsHooks/useIndexPageData'
 import HomepageNav from 'components/layout/Nav/HomepageNav'
+import Cards from 'components/landingPage/Cards/Cards'
 
 const IndexPage = (): JSX.Element => {
   const data = useIndexPageData()
@@ -33,6 +34,7 @@ const IndexPage = (): JSX.Element => {
           <h1 className="no-top-margin">
             <CMS.Text name="H1" data={data} />
           </h1>
+          <Cards />
         </div>
       </Main>
     </Providers>
