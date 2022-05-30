@@ -1,18 +1,53 @@
 {
   "name": "idea-landing",
   "version": "1.0.0",
+  "private": true,
   "description": "static gida landing page",
-  "main": "index.html",
+  "author": "Talus Analytics",
   "scripts": {
-    "build": "cp src/index.html build/index.html; cp src/about.html build; cp src/contact.html build; cp -r src/assets build; cp -r src/js build; cp -r src/downloads build; node_modules/.bin/sass src/styles/index.scss build/styles/index.css",
-    "deploy": "npm run build && aws s3 sync ./build s3://idea-landing --acl public-read --delete && aws cloudfront create-invalidation --distribution-id E1R2M65JATR9BK --paths \"/*\""
-  },
-  "author": "Talus Analytics, LLC",
-  "license": "ISC",
-  "devDependencies": {
-    "sass": "^1.25.0"
+    "develop": "scripts/start.sh",
+    "start": "scripts/start.sh",
+    "build": "scripts/build.sh",
+    "serve": "gatsby serve",
+    "postinstall": "scripts/postinstall.sh"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-react": "^7.16.7",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "@reach/router": "^1.3.4",
+    "@talus-analytics/library.airtable-cms": "^0.0.21",
+    "babel-plugin-styled-components": "^1.13.2",
+    "eslint": "^8.2.0",
+    "gatsby": "^4.1.6",
+    "gatsby-plugin-gtag": "^1.0.13",
+    "gatsby-plugin-image": "^2.1.3",
+    "gatsby-plugin-mdx": "^2.11.0",
+    "gatsby-plugin-react-helmet": "^5.1.0",
+    "gatsby-plugin-root-import": "^2.0.8",
+    "gatsby-plugin-sass": "^5.9.0",
+    "gatsby-plugin-sharp": "^4.1.4",
+    "gatsby-plugin-styled-components": "^5.1.0",
+    "gatsby-source-airtable": "^2.2.1",
+    "gatsby-source-filesystem": "^4.1.3",
+    "gatsby-transformer-sharp": "^4.1.0",
+    "node-html-parser": "^5.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-is": "^17.0.2",
+    "sass": "^1.49.9",
+    "styled-components": "^5.3.0",
+    "typescript": "^4.4.3",
+    "typescript-styled-plugin": "^0.18.1",
+    "webpack": "^5.64.1"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.12",
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }

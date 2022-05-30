@@ -1,3 +1,4 @@
+// original stylesheet from old site
 // IDEA re-brand vars
 $black: #303434;
 $primary-dark-blue: #023f88;
@@ -6,7 +7,7 @@ $gray-3: #c4c4c4;
 $gray-4: #f2f2f2;
 $primary-light-blue: #009bdf;
 
-$railway: "Raleway", sans-serif;
+$railway: 'Raleway', sans-serif;
 $small-font: 16px;
 $med-font: 20px;
 $big-font: 28px;
@@ -15,8 +16,8 @@ $page-padding: 50px;
 $big-padding: 30px;
 $small-padding: 15px;
 
-$phone: "screen and (max-width : 812px)";
-$phone-narrow: "screen and (max-width : 500px)";
+$phone: 'screen and (max-width : 812px)';
+$phone-narrow: 'screen and (max-width : 500px)';
 
 /* mixins */
 @mixin space_items_vert($size) {
@@ -41,7 +42,7 @@ body {
   height: 100%;
   margin: 0;
   color: $black;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 p {
@@ -64,7 +65,7 @@ a {
 button {
   border: 2px solid #023f88;
   border-radius: 5px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: $small-font;
   font-weight: 600;
   color: $primary-dark-blue;
@@ -89,7 +90,7 @@ button {
 
 .cc-compliance a:not(:first-child) {
   font-size: $med-font;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
   color: white;
   background-image: linear-gradient(#365194, #253b6c);
@@ -126,7 +127,7 @@ h1 {
   color: $primary-dark-blue;
   font-size: $big-font;
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin-bottom: 30px;
   &.no-top-margin {
     margin-top: 0px;
@@ -136,7 +137,7 @@ h1 {
 p {
   font-size: $small-font;
   line-height: 22px;
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   color: $black;
 }
 
@@ -147,7 +148,7 @@ p {
   align-items: center;
   margin: 0 auto;
   padding: $page-padding 20px 0px 20px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
   /* Key citations */
   .citation {
@@ -184,7 +185,7 @@ p {
 
     .opening-para {
       text-align: justify;
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Open Sans', sans-serif;
       font-size: $med-font;
       font-weight: 400;
       line-height: 30px;
@@ -223,7 +224,7 @@ p {
       }
       .link {
         margin-top: 10px;
-        font-family: "Raleway", sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: $small-font;
         word-break: break-all;
         text-decoration: underline;
@@ -371,7 +372,7 @@ p {
       display: inline-block;
       width: 23px;
       height: 23px;
-      content: "";
+      content: '';
       margin-right: 20px;
       background-repeat: no-repeat;
       flex-shrink: 0;
@@ -416,7 +417,7 @@ p {
 
       textarea {
         height: 104px;
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
       }
 
       .lengthHint {
@@ -555,7 +556,7 @@ $spacing: 10px;
       display: flex;
       flex-direction: row;
       > a {
-        font-family: "Open Sans", sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 16px;
         font-weight: normal;
         color: $primary-dark-blue;
@@ -604,7 +605,7 @@ $spacing: 10px;
       &.talus-logo {
         position: relative;
         .built-by {
-          font-family: "Raleway", sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-size: 9px;
           font-weight: 600;
           color: #404041;
@@ -646,7 +647,7 @@ $spacing: 10px;
 
 .cc-message,
 .cc-message * {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: normal;
 }
 
