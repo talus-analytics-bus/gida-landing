@@ -15,11 +15,14 @@ const Contact = () => {
     React.ReactNode | string
   >('Submit')
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    // eslint-disable-next-line
-    // @ts-ignore
-    const data = Object.fromEntries(new FormData(event.target))
+
+    const data = Object.fromEntries(
+      // eslint-disable-next-line
+      // @ts-ignore
+      new FormData(event.target as HTMLFormElement)
+    )
 
     const emptyfields = Object.values(data).some(field => field === '')
 
@@ -65,22 +68,31 @@ const Contact = () => {
   return (
     <>
       <header className={styles.header}>
-        <h1>Contact us</h1>
-      </header>
-
-      <form className={styles.main} onSubmit={handleSubmit}>
-        <div className={styles.formRow}>
+        <h1>Contact</h1>
+        <div className={styles.accessibility}>
           <p>
-            We welcome questions and feedback about the site, its contents, or
-            how to use the materials to provided here, as well as requests for
-            technical assistance. Please use the form below to contact us.
-          </p>
-          <p>
-            Your personal and contact information will only be used to respond
-            to your input. Do not submit any proprietary or protected
-            information via this form.
+            If you have any accessibility issues using any of these sites,
+            please contact us directly at{' '}
+            <a href="mailto:accessibility@talusanalytics.com" className="link">
+              accessibility@talusanalytics.com
+            </a>
+            .
           </p>
         </div>
+        <p>
+          Contact us at{' '}
+          <a
+            href="mailto:outbreaks@georgetown.edu"
+            target="_blank"
+            className="link"
+          >
+            outbreaks@georgetown.edu
+          </a>{' '}
+          or through the form below.
+        </p>
+      </header>
+      <form className={styles.main} onSubmit={handleSubmit}>
+        <div className={styles.formRow}></div>
         <div className={styles.formRow}>{errorMessage}</div>
         <div className={styles.formRow}>
           <label className={styles.firstName} htmlFor="First_Name">
