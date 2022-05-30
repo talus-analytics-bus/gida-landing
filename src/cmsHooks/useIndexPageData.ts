@@ -2,13 +2,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { AirtableCMSData } from '@talus-analytics/library.airtable-cms'
 
-// Sites will have many of these content hooks, each
-// of which corresponds to one table in Airtable.
 const useIndexPageData = () => {
-  const { cmsContent }: { cmsContent: AirtableCMSData } =
+  const { cmsHomepageContent }: { cmsHomepageContent: AirtableCMSData } =
     useStaticQuery(graphql`
-      query cmsContentQuery {
-        cmsContent: allAirtable(filter: { table: { eq: "Landing Page" } }) {
+      {
+        cmsHomepageContent: allAirtable(
+          filter: { table: { eq: "Landing Page" } }
+        ) {
           nodes {
             data {
               Name
@@ -26,7 +26,7 @@ const useIndexPageData = () => {
       }
     `)
 
-  return cmsContent
+  return cmsHomepageContent
 }
 
 export default useIndexPageData
