@@ -1,6 +1,8 @@
 import React from 'react'
 import { ProjectData } from 'cmsHooks/useProjectsData'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import useProjectLogosData from 'cmsHooks/useProjectLogosData'
+import CMS from '@talus-analytics/library.airtable-cms'
 
 interface CardProps {
   project: {
@@ -10,6 +12,8 @@ interface CardProps {
 
 const Card = ({ project }: CardProps) => {
   const image = getImage(project.data.Image.localFiles[0].childImageSharp)!
+
+  const logoData = useProjectLogosData()
 
   return (
     <div className="card">
@@ -27,10 +31,11 @@ const Card = ({ project }: CardProps) => {
       </div>
       <div className="right-block">
         <div className="logo-container">
-          <img
-            className="card-logo"
-            src="assets/tracking.png"
-            alt="Global Health Security Tracking logo"
+          <CMS.Image
+            name={project.data.Logo_Name[0].data.Name}
+            data={logoData}
+            imgClassName="card-logo"
+            imgStyle={{ objectFit: 'contain', objectPosition: 'left center' }}
           />
         </div>
         <div

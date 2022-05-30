@@ -239,6 +239,8 @@ p {
         .card-logo {
           max-height: 100%;
           max-width: 100%;
+          object-fit: contain;
+          height: 80px;
         }
       }
       p {
