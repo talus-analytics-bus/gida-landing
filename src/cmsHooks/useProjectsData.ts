@@ -15,7 +15,7 @@ export interface ProjectData {
   Link: string
   Logo_Name: {
     data: {
-      name: string
+      Name: string
     }
   }[]
 }
