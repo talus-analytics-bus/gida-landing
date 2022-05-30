@@ -22,20 +22,26 @@ module.exports = {
         concurrency: 5,
         tables: [
           {
-            baseId: `apptYPkeoCz0lSn19`,
-            tableName: `Table 1`,
+            baseId: `appVIQlFfFn7aqzMh`,
+            tableName: `Landing Page`,
             tableView: `CMS`,
             mapping: { Image: `fileNode` },
           },
           {
-            baseId: `apptYPkeoCz0lSn19`,
+            baseId: `appVIQlFfFn7aqzMh`,
             tableName: `Site metadata`,
             tableView: `CMS`,
             mapping: { Image: `fileNode` },
           },
           {
-            baseId: `apptYPkeoCz0lSn19`,
+            baseId: `appVIQlFfFn7aqzMh`,
             tableName: `Icons`,
+            tableView: `CMS`,
+            mapping: { SVG: `fileNode` },
+          },
+          {
+            baseId: `appVIQlFfFn7aqzMh`,
+            tableName: `Project Logos`,
             tableView: `CMS`,
             mapping: { SVG: `fileNode` },
           },
