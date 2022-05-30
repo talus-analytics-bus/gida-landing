@@ -8,7 +8,7 @@ import Main from '../components/layout/Main'
 import useIndexPageData from '../cmsHooks/useIndexPageData'
 import HomepageNav from 'components/layout/Nav/HomepageNav'
 import Cards from 'components/landingPage/Cards/Cards'
-import Footer from 'components/layout/Footer'
+import Footer from 'components/layout/Footer/Footer'
 
 import '../components/layout/oldStaticSiteStyles/index.scss'
 
