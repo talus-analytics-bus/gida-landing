@@ -12,8 +12,6 @@ const IndexPage = (): JSX.Element => {
   const data = useIndexPageData()
 
   return (
-    // all pages should be wrapped in the Providers component
-    // all pages should start with CMS.SEO to set metadata.
     <Providers>
       <CMS.SEO />
       <HomepageNav />
@@ -23,16 +21,19 @@ const IndexPage = (): JSX.Element => {
           src="assets/logo-title.png"
           alt="International Disease and Events Analysis logo"
         />
-        <CMS.Image name="Talus Logo" data={data} />
-        <h1>
-          <CMS.Text name="H1" data={data} />
-        </h1>
-        <p>
-          <CMS.Text name="Example Text" data={data} />
-          <a href={CMS.getText(data, 'Airtable URL')}>
-            <CMS.Text name="Airtable Link Text" data={data} />
-          </a>
-        </p>
+        <div className="landing-text">
+          <p
+            className="opening-para"
+            dangerouslySetInnerHTML={{
+              __html: CMS.getText(data, 'Intro text'),
+            }}
+          ></p>
+        </div>
+        <div className="cards">
+          <h1 className="no-top-margin">
+            <CMS.Text name="H1" data={data} />
+          </h1>
+        </div>
       </Main>
     </Providers>
   )
