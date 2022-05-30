@@ -17,7 +17,7 @@ import '../../../static/assets/fonts/fonts.css'
 import './styles/index.scss'
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  /* body {
     margin: 0;
     padding: 0;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
-  }
+  } */
 `
 
 // site-wide contexts for themes, icons, and metadata
