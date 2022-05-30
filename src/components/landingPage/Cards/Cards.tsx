@@ -5,11 +5,13 @@ import Card from './Card'
 const Cards = () => {
   const projects = useProjectsData()
 
-  console.log(projects)
+  const sortedProjects = projects.nodes.sort(
+    (a, b) => Number(a.data.Order) - Number(b.data.Order)
+  )
 
   return (
     <>
-      {projects.nodes.map(project => (
+      {sortedProjects.map(project => (
         <Card key={project.data.Name} project={project} />
       ))}
     </>

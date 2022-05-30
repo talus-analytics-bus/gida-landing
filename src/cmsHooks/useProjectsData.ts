@@ -8,11 +8,12 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 export interface ProjectData {
   Name: string
   Text: string
+  Link: string
+  Order: string
   Image: {
     localFiles: FileNode[] &
       { childImageSharp: IGatsbyImageDataParent<IGatsbyImageData> }[]
   }
-  Link: string
   Logo_Name: {
     data: {
       Name: string
@@ -36,6 +37,7 @@ const useProjectsData = () => {
               Name
               Text
               Link
+              Order
               Logo_Name {
                 data {
                   Name
@@ -44,7 +46,7 @@ const useProjectsData = () => {
               Image {
                 localFiles {
                   childImageSharp {
-                    gatsbyImageData(height: 400, placeholder: BLURRED)
+                    gatsbyImageData(width: 388, placeholder: BLURRED)
                   }
                 }
               }
