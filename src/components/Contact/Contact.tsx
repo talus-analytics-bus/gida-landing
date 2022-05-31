@@ -4,7 +4,6 @@ import axios from 'axios'
 import * as styles from './Contact.module.scss'
 
 const Contact = () => {
-  console.log(styles)
   const [successMessage, setSuccessMessage] = React.useState<
     React.ReactNode | string
   >('')
@@ -95,22 +94,22 @@ const Contact = () => {
         <div className={styles.formRow}></div>
         <div className={styles.formRow}>{errorMessage}</div>
         <div className={styles.formRow}>
-          <label className={styles.firstName} htmlFor="First_Name">
+          <label className={'styles.firstName'} htmlFor="First_Name">
             First Name*
             <input type="text" id="First_Name" name="First_Name" />
           </label>
-          <label className={styles.lastName} htmlFor="Last_Name">
+          <label className={'styles.lastName'} htmlFor="Last_Name">
             Last Name*
             <input type="text" id="Last_Name" name="Last_Name" />
           </label>
         </div>
 
         <div className={styles.formRow}>
-          <label className={styles.email} htmlFor="email">
+          <label className={'styles.email'} htmlFor="email">
             Email*
             <input type="text" id="email" name="email" />
           </label>
-          <label className={styles.org} htmlFor="Organization">
+          <label className={'styles.org'} htmlFor="Organization">
             Organization*
             <input type="text" id="Organization" name="Organization" />
           </label>
