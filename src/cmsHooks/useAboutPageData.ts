@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { AirtableCMSData } from '@talus-analytics/library.airtable-cms'
 
-const useIndexPageData = () => {
+const useAboutPageData = () => {
   const { cmsAboutPageContent }: { cmsAboutPageContent: AirtableCMSData } =
     useStaticQuery(graphql`
       {
@@ -29,4 +29,4 @@ const useIndexPageData = () => {
   return cmsAboutPageContent
 }
 
-export default useIndexPageData
+export default useAboutPageData
