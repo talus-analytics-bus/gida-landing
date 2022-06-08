@@ -44,7 +44,6 @@ const Card = ({ project }: CardProps) => {
         </div>
         <CMS.RenderRichText
           className="content"
-          onClick={() => alert('hi')}
           markdown={project.data.Description}
         />
         <CMS.RenderRichText
