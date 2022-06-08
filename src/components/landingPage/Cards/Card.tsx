@@ -42,17 +42,14 @@ const Card = ({ project }: CardProps) => {
             style={{ height: 80, objectFit: 'contain' }}
           />
         </div>
-        <div
+        <CMS.RenderRichText
           className="content"
-          dangerouslySetInnerHTML={{
-            __html: CMS.parseRichText(project.data.Description),
-          }}
+          onClick={() => alert('hi')}
+          markdown={project.data.Description}
         />
-        <div
+        <CMS.RenderRichText
           className="buttons"
-          dangerouslySetInnerHTML={{
-            __html: project.data.Buttons_and_Links,
-          }}
+          markdown={project.data.Buttons_and_Links}
         />
       </div>
     </div>

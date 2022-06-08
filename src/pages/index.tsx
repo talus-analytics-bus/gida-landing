@@ -23,14 +23,7 @@ const IndexPage = (): JSX.Element => {
           src="assets/logo-title.png"
           alt="International Disease and Events Analysis logo"
         />
-        <div className="landing-text">
-          <p
-            className="opening-para"
-            dangerouslySetInnerHTML={{
-              __html: CMS.getText(data, 'Intro text'),
-            }}
-          />
-        </div>
+        <CMS.RichText className="landing-text" name="Intro text" data={data} />
         <div className="cards">
           <h1 className="no-top-margin">
             <CMS.Text name="H1" data={data} />
