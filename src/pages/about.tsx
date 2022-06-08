@@ -1,11 +1,11 @@
 import React from 'react'
-import Providers from 'components/layout/Providers'
-import Nav from 'components/layout/Nav/Nav'
-
 import CMS from '@talus-analytics/library.airtable-cms'
 
-import useAboutPageData from 'cmsHooks/useAboutPageData'
+import Providers from 'components/layout/Providers'
+import Nav from 'components/layout/Nav/Nav'
 import Footer from 'components/layout/Footer/Footer'
+
+import useAboutPageData from 'cmsHooks/useAboutPageData'
 
 const AboutPage = () => {
   const aboutPageData = useAboutPageData()
