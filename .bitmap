@@ -15,11 +15,29 @@
         "mainFile": "index.tsx",
         "rootDir": "library/airtable-cms"
     },
+    "airtable/cms-download": {
+        "scope": "talus-analytics.library",
+        "version": "0.0.3",
+        "mainFile": "index.tsx",
+        "rootDir": "library/airtable/cms-download"
+    },
+    "airtable/cms-icon": {
+        "scope": "talus-analytics.library",
+        "version": "0.0.13",
+        "mainFile": "index.tsx",
+        "rootDir": "library/airtable/cms-icon"
+    },
     "airtable/cms-rich-text": {
         "scope": "talus-analytics.library",
         "version": "0.0.7",
         "mainFile": "index.tsx",
         "rootDir": "library/airtable/cms-rich-text"
+    },
+    "airtable/cms-types": {
+        "scope": "talus-analytics.library",
+        "version": "0.0.8",
+        "mainFile": "index.ts",
+        "rootDir": "library/airtable/cms-types"
     },
     "$schema-version": "14.9.0"
 }
