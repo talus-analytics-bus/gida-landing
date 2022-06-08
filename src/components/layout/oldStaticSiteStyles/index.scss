@@ -668,3 +668,73 @@ $spacing: 10px;
     padding: 10px 15px;
   }
 }
+
+.footer {
+  &.home {
+    margin-top: 80px;
+  }
+  height: 90px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid $black;
+  .content {
+    display: flex;
+    flex-direction: row;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:not(:last-child) {
+        border-right: 1px solid $black;
+      }
+      &:nth-child(2) {
+        //bump the height of GU logo slightly
+        img {
+          height: 50px;
+        }
+      }
+      &.talus-logo {
+        position: relative;
+        .built-by {
+          font-family: 'Raleway', sans-serif;
+          font-size: 9px;
+          font-weight: 600;
+          color: #404041;
+          position: absolute;
+          left: 40px;
+          top: 0px;
+          @media (max-width: 650px) {
+            left: 15%;
+          }
+          @media (max-width: 500px) {
+            display: none;
+          }
+        }
+      }
+    }
+    img {
+      height: 40px;
+      padding: 0px 40px;
+    }
+  }
+  @media #{$phone-narrow} {
+    height: unset;
+    margin-top: 40px;
+    padding: 10px 0px;
+    .content {
+      flex-direction: column;
+      a {
+        &:not(:last-child) {
+          border-right: 0px solid $black;
+        }
+      }
+      img {
+        height: 30px;
+        padding: 10px 0px;
+      }
+    }
+  }
+}

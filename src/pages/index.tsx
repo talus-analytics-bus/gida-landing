@@ -10,8 +10,6 @@ import HomepageNav from 'components/layout/Nav/HomepageNav'
 import Cards from 'components/landingPage/Cards/Cards'
 import Footer from 'components/layout/Footer/Footer'
 
-import '../components/layout/oldStaticSiteStyles/index.scss'
-
 const IndexPage = (): JSX.Element => {
   const data = useIndexPageData()
 
