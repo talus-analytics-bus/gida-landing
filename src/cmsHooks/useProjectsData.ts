@@ -9,13 +9,19 @@ export interface ProjectData {
   Name: string
   Description: string
   Buttons_and_Links: string
-  Link: string
-  Order: string
   Image: {
     localFiles: FileNode[] &
       { childImageSharp: IGatsbyImageDataParent<IGatsbyImageData> }[]
   }
-  Logo_Name: {
+  Link: string
+  Key_Color: string
+  Order: string
+  Logo: {
+    data: {
+      Name: string
+    }
+  }[]
+  Icon: {
     data: {
       Name: string
     }
@@ -38,7 +44,15 @@ const useProjectsData = () => {
               Name
               Description
               Buttons_and_Links
+              Image {
+                localFiles {
+                  childImageSharp {
+                    gatsbyImageData(width: 388, placeholder: BLURRED)
+                  }
+                }
+              }
               Link
+              Key_Color
               Order
               Logo {
                 data {
@@ -48,13 +62,6 @@ const useProjectsData = () => {
               Icon {
                 data {
                   Name
-                }
-              }
-              Image {
-                localFiles {
-                  childImageSharp {
-                    gatsbyImageData(width: 388, placeholder: BLURRED)
-                  }
                 }
               }
             }
