@@ -9,5 +9,17 @@
  */
 
 {
+    "airtable-cms": {
+        "scope": "talus-analytics.library",
+        "version": "0.0.30",
+        "mainFile": "index.tsx",
+        "rootDir": "library/airtable-cms"
+    },
+    "airtable/cms-rich-text": {
+        "scope": "talus-analytics.library",
+        "version": "0.0.7",
+        "mainFile": "index.tsx",
+        "rootDir": "library/airtable/cms-rich-text"
+    },
     "$schema-version": "14.9.0"
 }

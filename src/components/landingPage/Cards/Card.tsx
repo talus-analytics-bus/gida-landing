@@ -45,7 +45,7 @@ const Card = ({ project }: CardProps) => {
         <div
           className="content"
           dangerouslySetInnerHTML={{
-            __html: project.data.Description,
+            __html: CMS.parseRichText(project.data.Description),
           }}
         />
         <div

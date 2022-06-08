@@ -16,7 +16,7 @@ const useProjectLogosData = () => {
               Image {
                 localFiles {
                   childImageSharp {
-                    gatsbyImageData(height: 80, placeholder: TRACED_SVG)
+                    gatsbyImageData(height: 80, placeholder: BLURRED)
                   }
                 }
               }
