@@ -4,7 +4,7 @@ import { AirtableCMSData } from '@talus-analytics/library.airtable.cms-types'
 import { getCMSText } from '@talus-analytics/library.airtable.cms-text'
 import RenderCMSRichText from './RenderCMSRichText'
 
-export interface CMSRichTextProps {
+export interface CMSRichTextProps extends React.ComponentPropsWithRef<'div'> {
   /**
    * name of the text section in the table
    */
@@ -23,14 +23,12 @@ export interface CMSRichTextProps {
   noEmitError?: boolean
 }
 
-const CMSRichText = ({
-  data,
-  name,
-  noEmitError = false,
-}: CMSRichTextProps): JSX.Element => {
-  const markdown = getCMSText(data, name, noEmitError)
-  if (!markdown) return <></>
-  return <RenderCMSRichText markdown={markdown} />
-}
+const CMSRichText = React.forwardRef<HTMLDivElement, CMSRichTextProps>(
+  ({ data, name, noEmitError = false, ...props }, ref): JSX.Element => {
+    const markdown = getCMSText(data, name, noEmitError)
+    if (!markdown) return <></>
+    return <RenderCMSRichText {...props} ref={ref} markdown={markdown} />
+  }
+)
 
 export default CMSRichText

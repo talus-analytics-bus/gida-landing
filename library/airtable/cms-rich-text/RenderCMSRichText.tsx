@@ -1,7 +1,8 @@
 import React from 'react'
 import parseCMSRichText from './parseCMSRichText'
 
-export interface RenderCMSRichTextProps {
+export interface RenderCMSRichTextProps
+  extends React.ComponentPropsWithRef<'div'> {
   /**
    * string containing raw markdown from
    * an airtable rich text column
@@ -9,10 +10,17 @@ export interface RenderCMSRichTextProps {
   markdown: string
 }
 
-const RenderCMSRichText = ({
-  markdown,
-}: RenderCMSRichTextProps): JSX.Element => (
-  <div dangerouslySetInnerHTML={{ __html: parseCMSRichText(markdown) }} />
+const RenderCMSRichText = React.forwardRef<
+  HTMLDivElement,
+  RenderCMSRichTextProps
+>(
+  ({ markdown, ...props }, ref): JSX.Element => (
+    <div
+      {...props}
+      ref={ref}
+      dangerouslySetInnerHTML={{ __html: parseCMSRichText(markdown) }}
+    />
+  )
 )
 
 export default RenderCMSRichText
