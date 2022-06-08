@@ -210,6 +210,8 @@ p {
     grid-template-columns: 40% 60%;
     border: 1px solid #c4c4c4;
     box-shadow: 5px 5px 15px 0 #b3b3b3;
+    border-radius: 5px;
+    overflow: hidden;
 
     .left-block,
     .right-block {
