@@ -7,6 +7,7 @@ const HomepageNav = () => (
         <div></div>
         <div className="nav-links">
           <a href="/about">About</a>
+          <a href="/citations">Citations</a>
           <a href="/contact">Contact</a>
         </div>
       </div>

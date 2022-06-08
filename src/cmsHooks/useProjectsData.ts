@@ -7,7 +7,8 @@ import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export interface ProjectData {
   Name: string
-  Text: string
+  Description: string
+  Buttons_and_Links: string
   Link: string
   Order: string
   Image: {
@@ -35,10 +36,16 @@ const useProjectsData = () => {
           nodes {
             data {
               Name
-              Text
+              Description
+              Buttons_and_Links
               Link
               Order
-              Logo_Name {
+              Logo {
+                data {
+                  Name
+                }
+              }
+              Icon {
                 data {
                   Name
                 }

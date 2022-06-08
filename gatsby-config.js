@@ -45,12 +45,12 @@ module.exports = {
             tableView: `CMS`,
             mapping: { SVG: `fileNode` },
           },
-          {
-            baseId: `appVIQlFfFn7aqzMh`,
-            tableName: `Project Logos`,
-            tableView: `CMS`,
-            mapping: { Image: `fileNode` },
-          },
+          // {
+          //   baseId: `appVIQlFfFn7aqzMh`,
+          //   tableName: `Project Logos`,
+          //   tableView: `CMS`,
+          //   mapping: { Image: `fileNode` },
+          // },
           {
             baseId: `appVIQlFfFn7aqzMh`,
             tableName: `Projects`,
