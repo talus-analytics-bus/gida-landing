@@ -21,7 +21,7 @@ export interface CMSIconProps extends React.ComponentPropsWithRef<'div'> {
   /** Name of the icon in the icons tab */
   name: string
   /** color of the icon; note icons only accept one color */
-  color: string
+  color?: string
   /** color to change the icon to when hovered */
   hoverColor?: string
   /**

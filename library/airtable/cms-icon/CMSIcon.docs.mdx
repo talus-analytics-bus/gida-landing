@@ -11,7 +11,7 @@ import CMSIcon from './BIT_PLAYGROUND_ONLY/DEMO_AirtableCMSIcon'
 This is using a pre-saved query result; the same as when Gatsby runs the query and
 transforms the result into a static `.json` file.
 
-**Available icons are "Syringe" and "Learn more"**
+**Available icons in the pre-saved result are "Syringe" and "Learn more"**
 
 ```js live
 // prettier-ignore
@@ -120,14 +120,16 @@ interface Icon {
   text: string
 }
 
-function useCMSIcon(name: string, color: string): Icon
-function useCMSIcon( name: string, color: string, noEmitError: true): Icon | undefined
-function useCMSIcon( name: string, color: string, noEmitError: boolean): Icon | undefined
+function useCMSIcon(name: string, color: string | undefined): Icon
+function useCMSIcon( name: string, color: string | undefined, noEmitError: true): Icon | undefined
+function useCMSIcon( name: string, color: string | undefined, noEmitError: boolean): Icon | undefined
 ```
 
 This hook returns a specific icon by name, as an SVG string, in the color specified. By default, the hook will always either return an icon or throw an error, but if `noEmitError` is `true`, the hook may also return `undefined` if the icon isn't present in the airtable query.
 
 This hook is useful when it is necessary to use the SVG string in some way where `<CMSIcon/>` will not work, for example if further manipulation is necessary or if it needs to be inserted in a different container element. The `<CMSIcon/>` component should be preferred.
+
+If the `string` argument is undefined, then recoloring the icon will be skipped entirely and the raw SVG string will be returned.
 
 ## Batch-processing optimized hook: `useAllCMSIcons()`
 

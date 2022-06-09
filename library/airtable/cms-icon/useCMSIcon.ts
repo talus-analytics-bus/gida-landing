@@ -11,23 +11,32 @@ interface Icon {
 
 function useCMSIcon(
   name: string,
-  color: string,
+  color: string | undefined,
   noEmitError: true
 ): Icon | undefined
 function useCMSIcon(
   name: string,
-  color: string,
+  color: string | undefined,
   noEmitError: boolean
 ): Icon | undefined
-function useCMSIcon(name: string, color: string, noEmitError?: false): Icon
 function useCMSIcon(
   name: string,
-  color: string,
+  color: string | undefined,
+  noEmitError?: false
+): Icon
+function useCMSIcon(
+  name: string,
+  color?: string | undefined,
   noEmitError?: true | false | boolean | undefined
 ) {
   const iconsQuery = useContext(IconsContext)
   if (!iconsQuery) return undefined
   const icons = iconsQuery.nodes
+  if (!icons)
+    throw new Error(
+      `Icons not found in iconsQuery result. ` +
+        `Check return value from useIconsQuery().`
+    )
 
   if (icons.length === 0) {
     if (noEmitError) return undefined
@@ -52,10 +61,12 @@ function useCMSIcon(
     )
   }
 
-  const svgString = replaceFill(
-    icon.data.SVG.localFiles[0].childSvg.svgString,
-    color
-  )
+  let svgString = icon.data.SVG.localFiles[0].childSvg.svgString
+  if (color)
+    svgString = replaceFill(
+      icon.data.SVG.localFiles[0].childSvg.svgString,
+      color
+    )
 
   return { text: icon.data.Text, svg: svgString }
 }

@@ -20,7 +20,7 @@ const recursiveRecolor = (dom: HTMLElement, color: string) => {
   // const svgElement = svgDom.querySelector('svg')!
   const children = dom.childNodes
   if (children)
-    for (let child of children) {
+    for (const child of children) {
       // note this is the node-html-parser implementation
       // of the HTMLElement class, not a native HTMLElement
       if (child instanceof HTMLElement) {
