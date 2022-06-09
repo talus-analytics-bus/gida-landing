@@ -25,10 +25,10 @@ const TitleLink = styled.a`
 const DOILink = styled.a`
   color: #303434;
 `
-// const ProjectIcon = styled(CMS.Icon)`
-//   width: 24px;
-//   height: 24px;
-// `
+const ProjectIcon = styled(CMS.Icon)`
+  width: 24px;
+  height: 24px;
+`
 
 interface CitationsProps {
   data: Citation[]
@@ -53,10 +53,7 @@ const Citations = ({ data }: CitationsProps) => (
             </>
           )}
         </CitationText>
-        {/* <ProjectIcon
-          name={citation.Project[0].data.Icon[0].data.Name}
-          color={citation.Project[0].data.Key_Color}
-        /> */}
+        <ProjectIcon name={citation.Project[0].data.Icon[0].data.Name} />
       </Container>
     ))}
   </>

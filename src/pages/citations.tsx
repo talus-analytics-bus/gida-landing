@@ -46,11 +46,10 @@ const CitationsPage = () => {
         <H1>
           <CMS.Text name="H1" data={citationsPageData} />
         </H1>
-        <CMS.Icon name="IDEA" color="blue" />
         <Intro name="Intro text" data={citationsPageData} />
         <FilterContainer>
           <CMS.Text name="Filter bar label" data={citationsPageData} />
-          <p>filter bar here </p>
+          <p>filter bar here</p>
         </FilterContainer>
         <Citations data={filteredCitations} />
       </Main>
