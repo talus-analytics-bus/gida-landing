@@ -27,7 +27,6 @@ const Intro = styled(CMS.RichText)`
   line-height: 22px;
   color: #303434;
 `
-
 const FilterContainer = styled.div`
   margin-top: 30px;
 `

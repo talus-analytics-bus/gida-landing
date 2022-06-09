@@ -5,7 +5,7 @@ import { Citation } from 'cmsHooks/useCitationsData'
 import CMS from '@talus-analytics/library.airtable-cms'
 
 const Container = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
 `
 const CitationText = styled.p`
   line-height: 26px;
@@ -25,9 +25,22 @@ const TitleLink = styled.a`
 const DOILink = styled.a`
   color: #303434;
 `
+const IconContainer = styled.div<{ color: string }>`
+  display: flex;
+  margin-top: 10px;
+
+  &:hover > span {
+    color: ${({ color }) => color};
+  }
+`
 const ProjectIcon = styled(CMS.Icon)`
   width: 24px;
   height: 24px;
+`
+const ProjectName = styled.span`
+  transition: 150ms;
+  color: white;
+  padding-left: 0.25em;
 `
 
 interface CitationsProps {
@@ -46,14 +59,15 @@ const Citations = ({ data }: CitationsProps) => (
           {citation.Publication_?.trim()}
           {citation.DOI && (
             <>
-              {' , '}
-              <DOILink href={citation.DOI}>
-                {citation.DOI?.replace('https://', '').trim()}
-              </DOILink>
+              {', '}
+              <DOILink href={citation.DOI}>{citation.DOI.trim()}</DOILink>
             </>
           )}
         </CitationText>
-        <ProjectIcon name={citation.Project[0].data.Icon[0].data.Name} />
+        <IconContainer color={citation.Project[0].data.Key_Color}>
+          <ProjectIcon name={citation.Project[0].data.Icon[0].data.Name} />
+          <ProjectName>{citation.Project[0].data.Name}</ProjectName>
+        </IconContainer>
       </Container>
     ))}
   </>
