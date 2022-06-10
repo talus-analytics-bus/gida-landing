@@ -9,7 +9,7 @@ import Footer from 'components/layout/Footer/Footer'
 
 import useCitationsPageData from 'cmsHooks/useCitationsPageData'
 import useCitationsData from 'cmsHooks/useCitationsData'
-import Citations from 'components/citationsPage/Citations'
+import Citation from 'components/citationsPage/Citation'
 
 const Main = styled.main`
   max-width: 700px;
@@ -50,7 +50,9 @@ const CitationsPage = () => {
           <CMS.Text name="Filter bar label" data={citationsPageData} />
           <p>filter bar here</p>
         </FilterContainer>
-        <Citations data={filteredCitations} />
+        {filteredCitations.map(citation => (
+          <Citation {...{ citation }} />
+        ))}
       </Main>
       <Footer />
     </Providers>

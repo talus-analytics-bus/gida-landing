@@ -44,33 +44,29 @@ const ProjectName = styled.span`
 `
 
 interface CitationsProps {
-  data: Citation[]
+  citation: Citation
 }
 
-const Citations = ({ data }: CitationsProps) => (
-  <>
-    {data.map(citation => (
-      <Container key={citation.URL}>
-        <CitationText>
-          {citation.Authors?.trim()} ({citation.Publication_Year}).{' '}
-          <TitleLink href={citation.URL}>
-            {citation.Publication_Title?.trim()}.
-          </TitleLink>{' '}
-          {citation.Publication_?.trim()}
-          {citation.DOI && (
-            <>
-              {', '}
-              <DOILink href={citation.DOI}>{citation.DOI.trim()}</DOILink>
-            </>
-          )}
-        </CitationText>
-        <IconContainer color={citation.Project[0].data.Key_Color}>
-          <ProjectIcon name={citation.Project[0].data.Icon[0].data.Name} />
-          <ProjectName>{citation.Project[0].data.Name}</ProjectName>
-        </IconContainer>
-      </Container>
-    ))}
-  </>
+const Citations = ({ citation }: CitationsProps) => (
+  <Container key={citation.URL}>
+    <CitationText>
+      {citation.Authors?.trim()} ({citation.Publication_Year}).{' '}
+      <TitleLink href={citation.URL}>
+        {citation.Publication_Title?.trim()}.
+      </TitleLink>{' '}
+      {citation.Publication_?.trim()}
+      {citation.DOI && (
+        <>
+          {', '}
+          <DOILink href={citation.DOI}>{citation.DOI.trim()}</DOILink>
+        </>
+      )}
+    </CitationText>
+    <IconContainer color={citation.Project[0].data.Key_Color}>
+      <ProjectIcon name={citation.Project[0].data.Icon[0].data.Name} />
+      <ProjectName>{citation.Project[0].data.Name}</ProjectName>
+    </IconContainer>
+  </Container>
 )
 
 export default Citations
