@@ -38,7 +38,17 @@
      */
     "packageManager": "teambit.dependencies/yarn",
     "policy": {
-      "dependencies": {},
+      "dependencies": {
+        "@talus-analytics/library.airtable-cms": "0.0.32",
+        "@talus-analytics/library.airtable.cms-download": "0.0.4",
+        "@talus-analytics/library.airtable.cms-icon": "0.0.15",
+        "@talus-analytics/library.airtable.cms-image": "0.0.11",
+        "@talus-analytics/library.airtable.cms-plot-icon": "0.0.10",
+        "@talus-analytics/library.airtable.cms-rich-text": "0.0.8",
+        "@talus-analytics/library.airtable.cms-seo": "0.0.8",
+        "@talus-analytics/library.airtable.cms-text": "0.0.8",
+        "@talus-analytics/library.airtable.cms-types": "0.0.9"
+      },
       "peerDependencies": {}
     }
   },
