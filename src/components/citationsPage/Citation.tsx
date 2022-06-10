@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Citation } from 'cmsHooks/useCitationsData'
 import CMS from '@talus-analytics/library.airtable-cms'
+
+import { Citation } from 'cmsHooks/useCitationsData'
 
 const Container = styled.div`
   margin-top: 30px;
