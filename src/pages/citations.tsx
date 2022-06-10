@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import CMS from '@talus-analytics/library.airtable-cms'
+import Typeahead from '@talus-analytics/library.ui.typeahead'
 
 import Providers from 'components/layout/Providers'
 import Nav from 'components/layout/Nav/Nav'
@@ -10,6 +11,7 @@ import Citation from 'components/citationsPage/Citation'
 
 import useCitationsPageData from 'cmsHooks/useCitationsPageData'
 import useCitationsData from 'cmsHooks/useCitationsData'
+import useProjectNames from 'cmsHooks/useProjectNames'
 
 const Main = styled.main`
   max-width: 700px;
@@ -45,8 +47,38 @@ const FilterContainer = styled.div`
 const CitationsPage = () => {
   const citationsPageData = useCitationsPageData()
   const citationsData = useCitationsData()
+  const projectNames = useProjectNames()
 
-  const filteredCitations = citationsData.nodes.map(node => node.data)
+  const nameFilters = projectNames.distinct.map(name => ({
+    key: name,
+    label: name,
+  }))
+
+  const [selectedFilters, setSelectedFilters] = React.useState<
+    typeof nameFilters
+  >([])
+
+  const selectedKeys = selectedFilters.map(i => i.key)
+  const unselectedFilters = nameFilters.filter(
+    i => !selectedKeys.includes(i.key)
+  )
+
+  const activeFilterNames = selectedFilters.map(f => f.label)
+  const citations = citationsData.nodes.map(node => node.data)
+  const filteredCitations =
+    activeFilterNames.length === 0
+      ? citations
+      : citations.filter(citation =>
+          activeFilterNames.includes(citation.Project[0].data.Name)
+        )
+
+  const placeholder =
+    selectedFilters.length === 0
+      ? 'Select projects'
+      : selectedFilters
+          .map(f => f.label)
+          .slice(0, 3)
+          .join(', ')
 
   return (
     <Providers>
@@ -59,7 +91,16 @@ const CitationsPage = () => {
         <Intro name="Intro text" data={citationsPageData} />
         <FilterContainer>
           <CMS.Text name="Filter bar label" data={citationsPageData} />
-          <p>filter bar here</p>
+          <Typeahead
+            multiselect
+            values={selectedFilters}
+            items={unselectedFilters}
+            onAdd={item => setSelectedFilters(prev => [...prev, item])}
+            onRemove={item =>
+              setSelectedFilters(prev => prev.filter(i => i.key !== item.key))
+            }
+            placeholder={placeholder}
+          />
         </FilterContainer>
         <H2>
           <CMS.Text name="Idea citations header" data={citationsPageData} />
