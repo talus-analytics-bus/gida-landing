@@ -8,11 +8,13 @@ const useProjectNames = () => {
   const { projectNames }: { projectNames: ProjectNames } =
     useStaticQuery(graphql`
       {
-        projectNames: allAirtable(filter: { table: { eq: "Projects" } }) {
-          distinct(field: data___Name)
+        projectNames: allAirtable(filter: { table: { eq: "Citations" } }) {
+          distinct(field: data___Project___data___Name)
         }
       }
     `)
+
+  console.log(projectNames)
 
   return projectNames
 }
