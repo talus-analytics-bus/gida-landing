@@ -14,8 +14,6 @@ const useProjectNames = () => {
       }
     `)
 
-  console.log(projectNames)
-
   return projectNames
 }
 
