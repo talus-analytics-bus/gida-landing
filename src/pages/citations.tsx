@@ -72,6 +72,13 @@ const CitationsPage = () => {
           activeFilterNames.includes(citation.Project[0].data.Name)
         )
 
+  const toolCitations = filteredCitations.filter(
+    citation => citation.Citation_type === 'Tool'
+  )
+  const paperCitations = filteredCitations.filter(
+    citation => citation.Citation_type === 'Paper'
+  )
+
   const placeholder =
     selectedFilters.length === 0
       ? 'Select projects'
@@ -102,22 +109,28 @@ const CitationsPage = () => {
             placeholder={placeholder}
           />
         </FilterContainer>
-        <H2>
-          <CMS.Text name="Idea citations header" data={citationsPageData} />
-        </H2>
-        {filteredCitations.map(
-          citation =>
-            citation.Citation_type === 'Tool' && <Citation {...{ citation }} />
+        {toolCitations.length > 0 && (
+          <>
+            <H2>
+              <CMS.Text name="Idea citations header" data={citationsPageData} />
+            </H2>
+            {toolCitations.map(citation => (
+              <Citation key={citation.Publication_Title} {...{ citation }} />
+            ))}
+          </>
         )}
-        <H2>
-          <CMS.Text
-            name="Publication citations header"
-            data={citationsPageData}
-          />
-        </H2>
-        {filteredCitations.map(
-          citation =>
-            citation.Citation_type === 'Paper' && <Citation {...{ citation }} />
+        {paperCitations.length > 0 && (
+          <>
+            <H2>
+              <CMS.Text
+                name="Publication citations header"
+                data={citationsPageData}
+              />
+            </H2>
+            {paperCitations.map(citation => (
+              <Citation key={citation.Publication_Title} {...{ citation }} />
+            ))}
+          </>
         )}
       </Main>
       <Footer />
