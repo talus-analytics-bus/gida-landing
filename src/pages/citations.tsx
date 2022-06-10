@@ -19,6 +19,17 @@ const Main = styled.main`
 const H1 = styled.h1`
   color: #00408d;
 `
+const H2 = styled.h2`
+  margin-top: 40px;
+  font-family: 'Rawline';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: #303434;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d6d8db;
+`
 const Intro = styled(CMS.RichText)`
   font-family: 'Open Sans';
   font-style: normal;
@@ -50,9 +61,23 @@ const CitationsPage = () => {
           <CMS.Text name="Filter bar label" data={citationsPageData} />
           <p>filter bar here</p>
         </FilterContainer>
-        {filteredCitations.map(citation => (
-          <Citation {...{ citation }} />
-        ))}
+        <H2>
+          <CMS.Text name="Idea citations header" data={citationsPageData} />
+        </H2>
+        {filteredCitations.map(
+          citation =>
+            citation.Citation_type === 'Tool' && <Citation {...{ citation }} />
+        )}
+        <H2>
+          <CMS.Text
+            name="Publication citations header"
+            data={citationsPageData}
+          />
+        </H2>
+        {filteredCitations.map(
+          citation =>
+            citation.Citation_type === 'Paper' && <Citation {...{ citation }} />
+        )}
       </Main>
       <Footer />
     </Providers>
