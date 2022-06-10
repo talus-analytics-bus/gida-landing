@@ -54,7 +54,7 @@ const Citations = ({ citation }: CitationsProps) => (
       <TitleLink href={citation.URL}>
         {citation.Publication_Title?.trim()}.
       </TitleLink>{' '}
-      {citation.Publication_?.trim()}
+      {citation.Publication?.trim()}
       {citation.DOI && (
         <>
           {', '}
