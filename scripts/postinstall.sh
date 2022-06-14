@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # install, compile, and link bit
-bit compile;
-bit link;
+# These are unnecessary when there are 
+# no bit components in the repo because
+# they're just installed with yarn.
+# bit compile;
+# bit link;
+
+
 
