@@ -72,12 +72,12 @@ const CitationsPage = () => {
           activeFilterNames.includes(citation.Project[0].data.Name)
         )
 
-  const toolCitations = filteredCitations.filter(
-    citation => citation.Citation_type === 'Tool'
-  )
-  const paperCitations = filteredCitations.filter(
-    citation => citation.Citation_type === 'Paper'
-  )
+  const toolCitations = filteredCitations
+    .filter(citation => citation.Citation_type === 'Tool')
+    .sort((a, b) => a.Authors.localeCompare(b.Authors))
+  const paperCitations = filteredCitations
+    .filter(citation => citation.Citation_type === 'Paper')
+    .sort((a, b) => a.Authors.localeCompare(b.Authors))
 
   const placeholder =
     selectedFilters.length === 0
