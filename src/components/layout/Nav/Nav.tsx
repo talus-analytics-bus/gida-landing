@@ -5,7 +5,11 @@ const Nav = () => (
   <nav className="navbar">
     <div className="wrapper">
       <Link className="nav-logo-container" to="/">
-        <img src="assets/small-logo.png" alt="IDEA logo" className="nav-logo" />
+        <img
+          src="/assets/small-logo.png"
+          alt="IDEA logo"
+          className="nav-logo"
+        />
       </Link>
       <div className="nav-links">
         <Link to="/">Home</Link>
