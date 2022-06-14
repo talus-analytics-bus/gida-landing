@@ -5,13 +5,13 @@ const Footer = () => (
     <div className="content">
       <a target="_blank" href="https://ghssidea.org">
         <img
-          src="assets/logo-title.png"
+          src="/assets/logo-title.png"
           alt="International Disease and Events Analysis"
         />
       </a>
       <a target="_blank" href="https://ghss.georgetown.edu/">
         <img
-          src="assets/logo-georgetown.png"
+          src="/assets/logo-georgetown.png"
           alt="Georgetown University Center for Global Health Science and Security"
         />
       </a>
@@ -20,7 +20,7 @@ const Footer = () => (
         href="http://talusanalytics.com/"
         className="talus-logo"
       >
-        <img src="assets/logo-talus.png" alt="Talus Analytics, LLC" />
+        <img src="/assets/logo-talus.png" alt="Talus Analytics, LLC" />
         <div className="built-by">Built by</div>
       </a>
     </div>
