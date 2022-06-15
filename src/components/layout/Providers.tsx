@@ -13,7 +13,7 @@ import useIconsQuery from 'cmsHooks/useIconsQuery'
 import useSiteMetadataQuery from 'cmsHooks/useSiteMetadataQuery'
 import getTrackingId from 'utilities/trackingId'
 
-import '../../../static/assets/fonts/fonts.css'
+import './oldStaticSiteStyles/fonts.css'
 import './oldStaticSiteStyles/index.scss'
 
 const GlobalStyle = createGlobalStyle`
