@@ -16,6 +16,9 @@ const Nav = () => (
         <Link activeClassName="active" to="/about">
           About
         </Link>
+        <Link activeClassName="active" to="/citations">
+          Citations
+        </Link>
         <Link activeClassName="active" to="/contact">
           Contact
         </Link>
