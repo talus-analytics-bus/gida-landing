@@ -26,7 +26,7 @@ const Card = ({ project }: CardProps) => {
           />
         </div>
         <a className="link" target="_blank" href={project.data.Link}>
-          {project.data.Link}
+          {project.data.Link.replace('https://', '')}
         </a>
       </div>
       <div className="right-block">
