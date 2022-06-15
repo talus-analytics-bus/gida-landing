@@ -44,6 +44,16 @@ const FilterContainer = styled.div`
   margin-top: 30px;
 `
 
+const citationSort = (
+  a: { Publication_Date: string },
+  b: { Publication_Date: string }
+) => {
+  return (
+    new Date(b.Publication_Date).getTime() -
+    new Date(a.Publication_Date).getTime()
+  )
+}
+
 const CitationsPage = () => {
   const citationsPageData = useCitationsPageData()
   const citationsData = useCitationsData()
@@ -74,10 +84,10 @@ const CitationsPage = () => {
 
   const toolCitations = filteredCitations
     .filter(citation => citation.Citation_type === 'Tool')
-    .sort((a, b) => a.Authors.localeCompare(b.Authors))
+    .sort(citationSort)
   const paperCitations = filteredCitations
     .filter(citation => citation.Citation_type === 'Paper')
-    .sort((a, b) => a.Authors.localeCompare(b.Authors))
+    .sort(citationSort)
 
   const placeholder =
     selectedFilters.length === 0

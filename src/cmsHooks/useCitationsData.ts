@@ -4,6 +4,7 @@ export interface Citation {
   Publication_Title: string
   Authors: string
   Publication_Year: number
+  Publication_Date: string
   Publication: string
   Citation_type: string
   URL: string
@@ -37,6 +38,7 @@ const useCitationsData = () => {
               Publication_Title
               Authors
               Publication_Year
+              Publication_Date
               Publication
               URL
               DOI
