@@ -35,6 +35,12 @@ module.exports = {
           },
           {
             baseId: `appVIQlFfFn7aqzMh`,
+            tableName: `Privacy Policy Page`,
+            tableView: `CMS`,
+            // mapping: { Image: `fileNode` },
+          },
+          {
+            baseId: `appVIQlFfFn7aqzMh`,
             tableName: `Citations Page`,
             tableView: `CMS`,
             // mapping: { Image: `fileNode` },
