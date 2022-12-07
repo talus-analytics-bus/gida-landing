@@ -14,7 +14,7 @@
 | Prod    | [![CircleCI](https://dl.circleci.com/status-badge/img/gh/talus-analytics-bus/gida-landing/tree/prod.svg?style=svg&circle-token=5725dc9620302bd1d4d0dc29bc9db0e47f893efd)](https://dl.circleci.com/status-badge/redirect/gh/talus-analytics-bus/gida-landing/tree/prod)       | [ghssidea.org](https://ghssidea.org/)                 |
 | Staging | [![CircleCI](https://dl.circleci.com/status-badge/img/gh/talus-analytics-bus/gida-landing/tree/staging.svg?style=svg&circle-token=5725dc9620302bd1d4d0dc29bc9db0e47f893efd)](https://dl.circleci.com/status-badge/redirect/gh/talus-analytics-bus/gida-landing/tree/staging) | [staging.ghssidea.org](https://staging.ghssidea.org/) |
 
-No automatic ingest and deployment currently configured
+Automated builds are scheduled to ingest all data to the `staging` site on the first of each month at midnight UTC.
 
 ## ⚙️ CMS Airtable
 
