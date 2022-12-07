@@ -33,7 +33,7 @@ No automatic ingest and deployment currently configured
 
 ## ⚙️ CMS Airtable
 
-[https://airtable.com/appVIQlFfFn7aqzMh/tblCSS611oqtOTf3f/viwg5AsPFKKFCbOLe?blocks=hide](Idea Landing Page CMS)
+[Idea Landing Page CMS](https://airtable.com/appVIQlFfFn7aqzMh/tblCSS611oqtOTf3f/viwg5AsPFKKFCbOLe?blocks=hide)
 
 ## 📄 Ingest Latest Data from Airtable
 
