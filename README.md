@@ -43,6 +43,10 @@ yarn start
 
 ## 🖥 Deployment Infrastructure
 
-GHSS Idea Infrastructure is managed using a CloudFormation template based on the `build-stack.yaml` template, all updates should be made using the CF template.
+All GHSS IDEA Infrastructure is managed using the CloudFormation template within
+the `/CloudFormation/` directory. All changes to hosting, domain names, alternate domain
+names, and access control must be made in the template and deployed using the update script.
 
-Changes to Infrastructure should not be made in AWS Browser Console.
+Infrastructure updates must be made with care as they can cause site downtime.
+
+Remember to update site passwords before running deployment command, and don't commit them to github.
