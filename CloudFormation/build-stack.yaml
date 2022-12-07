@@ -605,8 +605,3 @@ Resources:
 # CloudFrontURL:
 # Value: !GetAtt DevDistribution.DomainName
 # Description: CloudFront URL for updating DNS record
-
-Feedback
-Looking for language selection? Find it in the new 
-Unified Settings
-© 2022, Amazon Web Services, Inc. or its affiliates.
