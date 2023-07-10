@@ -5,6 +5,8 @@ credentials: &credentials
   - Airtable Credentials
   - Bit Credentials
 
+# comment to make cci run
+
 workflows:
   version: 2
   build:
