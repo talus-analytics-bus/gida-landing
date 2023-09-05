@@ -72,8 +72,8 @@ const Contact = () => {
           <p>
             If you have any accessibility issues using any of these sites,
             please contact us directly at{' '}
-            <a href="mailto:accessibility@talusanalytics.com" className="link">
-              accessibility@talusanalytics.com
+            <a href="mailto:outbreaks@georgetown.edu" className="link">
+              outbreaks@georgetown.edu
             </a>
             .
           </p>
