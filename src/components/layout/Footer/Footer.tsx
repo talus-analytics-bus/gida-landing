@@ -15,14 +15,6 @@ const Footer = () => (
           alt="Georgetown University Center for Global Health Science and Security"
         />
       </a>
-      <a
-        target="_blank"
-        href="http://talusanalytics.com/"
-        className="talus-logo"
-      >
-        <img src="/assets/logo-talus.png" alt="Talus Analytics, LLC" />
-        <div className="built-by">Built by</div>
-      </a>
     </div>
   </div>
 )
