@@ -59,12 +59,6 @@ const Citations = ({ citation }: CitationsProps) => (
           {citation.Publication_Title?.trim()}.
         </TitleLink>{' '}
         {citation.Publication?.trim()}
-        {citation.DOI && (
-          <>
-            {'. '}
-            <DOILink href={citation.DOI}>{citation.DOI.trim()}</DOILink>
-          </>
-        )}
         {'. '}
         {citation.Publication_Date &&
           new Date(citation.Publication_Date).toLocaleDateString(undefined, {
@@ -72,7 +66,12 @@ const Citations = ({ citation }: CitationsProps) => (
             month: 'long',
             day: 'numeric',
           })}
-        .
+        {citation.DOI && (
+          <>
+            {'. '}
+            <DOILink href={citation.DOI}>{citation.DOI.trim()}</DOILink>
+          </>
+        )}
       </CitationText>
       {citation.Project &&
         citation.Project.map(({ data: project }) => (
