@@ -54,22 +54,33 @@ const Citations = ({ citation }: CitationsProps) => (
       {console.log('_____________\nCitation:')}
       {console.log(`Publication Title: ${citation.Publication_Title}`)}
       <CitationText>
-        {citation.Authors?.trim()} ({citation.Publication_Year}).{' '}
+        {citation.Authors?.trim()}.{' '}
         <TitleLink href={citation.URL}>
           {citation.Publication_Title?.trim()}.
         </TitleLink>{' '}
         {citation.Publication?.trim()}
         {citation.DOI && (
           <>
-            {', '}
+            {'. '}
             <DOILink href={citation.DOI}>{citation.DOI.trim()}</DOILink>
           </>
         )}
+        {'. '}
+        {citation.Publication_Date &&
+          new Date(citation.Publication_Date).toLocaleDateString(undefined, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        .
       </CitationText>
-      <IconContainer color={citation.Project[0].data.Key_Color}>
-        <ProjectIcon name={citation.Project[0].data.Icon[0].data.Name} />
-        <ProjectName>{citation.Project[0].data.Name}</ProjectName>
-      </IconContainer>
+      {citation.Project &&
+        citation.Project.map(({ data: project }) => (
+          <IconContainer color={project.Key_Color}>
+            <ProjectIcon name={project.Icon[0].data.Name} />
+            <ProjectName>{project.Name}</ProjectName>
+          </IconContainer>
+        ))}
     </>
   </Container>
 )

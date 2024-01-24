@@ -79,7 +79,9 @@ const CitationsPage = () => {
     activeFilterNames.length === 0
       ? citations
       : citations.filter(citation =>
-          activeFilterNames.includes(citation.Project[0].data.Name)
+          citation.Project.some(name =>
+            activeFilterNames.includes(name.data.Name)
+          )
         )
 
   const toolCitations = filteredCitations
