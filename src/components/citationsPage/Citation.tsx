@@ -51,8 +51,6 @@ interface CitationsProps {
 const Citations = ({ citation }: CitationsProps) => (
   <Container key={citation.URL}>
     <>
-      {console.log('_____________\nCitation:')}
-      {console.log(`Publication Title: ${citation.Publication_Title}`)}
       <CitationText>
         {citation.Authors?.trim()}.{' '}
         <TitleLink href={citation.URL}>
