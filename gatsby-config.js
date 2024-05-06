@@ -72,11 +72,6 @@ module.exports = {
           },
           {
             baseId: `appVIQlFfFn7aqzMh`,
-            tableName: `Publications`,
-            tableView: `CMS`,
-          },
-          {
-            baseId: `appVIQlFfFn7aqzMh`,
             tableName: `Citations`,
             tableView: `CMS`,
             tableLinks: [`Publication_Cited`, `Project`],
